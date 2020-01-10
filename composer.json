@@ -5,7 +5,11 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+<<<<<<< HEAD
         "friendsofsymfony/user-bundle": "~2.0",
+=======
+        "friendsofsymfony/user-bundle": "^2.1",
+>>>>>>> ced6f61433796400ca76534013abb3a07b70b23f
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "4.4.*",
         "symfony/console": "4.4.*",
