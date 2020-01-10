@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Libelle</th>
+                <th>Image</th>
                 <th>Pa</th>
                 <th>Pv</th>
                 <th>Tva</th>
@@ -26,6 +27,8 @@
                 <td>{{ produit.pv }}</td>
                 <td>{{ produit.tva }}</td>
                 <td>{{ produit.stock }}</td>
+                <td><img src="{{asset('images/post/')}}{{ produit.image }}" style="width:75px;max-height:75px;"></td>
+                <td>
                 <td>
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
                     <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
