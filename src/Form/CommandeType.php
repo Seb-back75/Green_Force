@@ -13,6 +13,7 @@ class CommandeType extends AbstractType
     {
         $builder
             ->add('numcom')
+            ->add('produit')
             ->add('date')
             ->add('tht')
             ->add('ttva')

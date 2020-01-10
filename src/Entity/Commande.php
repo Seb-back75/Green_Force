@@ -28,6 +28,10 @@ class Commande
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $produit;
 
     /**
      * @ORM\Column(type="float")
@@ -107,6 +111,18 @@ class Commande
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getProduit(): ?string
+    {
+        return $this->produit;
+    }
+
+    public function setProduit(string $produit): self
+    {
+        $this->produit = $produit;
 
         return $this;
     }
