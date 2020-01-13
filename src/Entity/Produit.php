@@ -24,8 +24,9 @@ class Produit
      * @ORM\Column(type="string", length=50)
      */
     private $libelle;
+    
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=255)
      */
     private $description;
 
