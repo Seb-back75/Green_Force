@@ -31,6 +31,11 @@ class Avis
      */
     private $Date;
 
+    public function __construct()
+    {
+        $this->Date = new \Datetime;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
