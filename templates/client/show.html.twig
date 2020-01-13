@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <h1>Client</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom Entreprise</th>
+                <td>{{ client.NomEntreprise }}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ client.Responsable }}</td>
+            </tr>
+            <tr>
+                <th>Adresse de Livraison</th>
+                <td>{{ client.AdressedeLivraison  }}</td>
+            </tr>
+            <tr>
+                <th>Adresse de Facturation</th>
+                <td>{{ client.AdressedeFacturation }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ client.Telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ client.Email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_index') }}">back to list</a>
+
+    <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+
+    {{ include('client/_delete_form.html.twig') }}
+{% endblock %}
