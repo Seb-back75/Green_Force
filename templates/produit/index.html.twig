@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Libelle</th>
+                <th>Description</th>
                 <th>Image</th>
                 <th>Pa</th>
                 <th>Pv</th>
@@ -23,13 +24,13 @@
             <tr>
                 <td>{{ produit.id }}</td>
                 <td>{{ produit.libelle }}</td>
+                <td>{{ produit.description }}</td>
                 <td><img src="{{asset('images/post/')}}{{ produit.image }}" style="width:75px;max-height:75px;"></td>
                 <td>{{ produit.pa }}</td>
                 <td>{{ produit.pv }}</td>
                 <td>{{ produit.tva }}</td>
                 <td>{{ produit.stock }}</td>
                 
-                <td>
                 <td>
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
                     <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
