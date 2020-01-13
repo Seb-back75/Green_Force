@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Papeterie{% endblock %}
+
+{% block monTitre %}Papeterie {{ papeterie.description}}{% endblock %}
+{% block body %}
+{{form_start(form)}}
+
+    {{form_widget(form)}}
+    <a href="{{path('modifPapeterie',{'id' : papeterie.id})}}" class="btn btn-primary">Retour</a>
+    <input type="submit" value="vaider" class ="btn btn-success">
+{{form_end(form)}}
+
+{% endblock %}

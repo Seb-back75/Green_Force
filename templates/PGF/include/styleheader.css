@@ -1,0 +1,63 @@
+.herd
+{
+    background-color: black;
+    height: 40vh;
+    background-image: url(../img/headerimg.jpg);
+    background-size: cover;
+}
+.papt
+{
+    
+    height: 40vh;
+    background-image: url(../img/papeterie.jpg);
+    background-size: cover;
+}
+.entr
+{
+    
+    height: 40vh;
+    background-image: url(../img/produit_entretien.jpg);
+    background-size: cover;
+}
+.equip
+{
+    
+    height: 40vh;
+    background-image: url(../img/equipements.jpg);
+    background-size: cover;
+}
+.prop
+{
+    
+    height: 40vh;
+    background-image: url(../img/propos.jpg);
+    background-size: cover;
+}
+.cont
+{
+    
+    height: 40vh;
+    background-image: url(../img/contact.jpg);
+    background-size: cover;
+}
+.title
+{color:white;
+text-shadow:1px 3px 5px #4fa626;
+text-align: center;
+font-size: 2.2em;
+font-family: Apple Chancery, cursive;
+
+ 
+}
+.taille
+{
+    font-size: 1.8em;
+    justify-content: end;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.nav-link{
+    margin-left: 100px;
+    
+}
+

@@ -1,0 +1,45 @@
+
+.fat1
+{
+    
+    
+    height: 25vh;
+    font-family: Apple Chancery, cursive;
+    }
+.fat2
+{
+    
+    
+    height: 25vh;
+    font-family: Apple Chancery, cursive;
+    text-align: center;    
+}
+.fat3
+{
+    
+    
+    height: 25vh;
+    font-family: Apple Chancery, cursive;
+    text-align: center;    
+}
+a
+{
+    color: #7c7c7d;
+    text-decoration: none;
+    
+   
+}
+a:hover
+{
+    color: #4fa727;
+    text-decoration: none;
+}
+h3
+{
+    color:  #7c7c7d;
+}
+.imglogo
+{
+    height: 140px;
+    width: 140px;
+}

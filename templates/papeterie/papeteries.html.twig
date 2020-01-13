@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des papeteries{% endblock %}
+
+{% block monTitre %}Liste des papeteries{% endblock %}
+{% block body %}
+{% if admin_papeterie %}
+<a href="{{path('creationPapeterie')}}" class="d-block btn btn-success">Ajouter</a>
+{% endif %}
+
+
+<div class="row no-gutters">
+    {% for papeterie in papeteries %}
+        <div class="col-10 col-lg-6 p-1">
+            <div class="card mb-3">
+                <div class="row no-gutters align-items-center p-2">
+                    <div class="col-12 col-md-4">
+                        <a href="{{path('affichage_papeterie',{'id' : papeterie.id})}}"><img src="{{asset('images/papeterie/' ~ papeterie.image)}}" class="card-img"></a>
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h5 class="card-title">{{papeterie.description}}</h5>
+                            <p class="card-text">
+                                <div>Marque : {{papeterie.type.marque.libelle}}</div>
+                                <div>Type : {{papeterie.type.utilisation}} </div>
+                                <div>Couleur : {{papeterie.type.couleur}}</div>
+                                <div>Prix : {{papeterie.prix}}€</div>
+                                
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                 {% if admin_papeterie %}
+                    <div class="row no-gutters">
+                        <a href="{{path('modifPapeterie',{'id' : papeterie.id})}}" class="col btn btn-warning">Modifier</a>
+                         <form method="post" class="col" action="{{path('supPapeterie',{'id':papeterie.id})}}" onsubmit="return confirm('Voulez-vous vraiment supprimer ?');">
+                            <input type="hidden" name="_method" value="SUP">
+                            <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ papeterie.id)}}">
+                            <input type="submit" class="btn btn-danger w-100" value="supprimer">
+                        </form>
+
+                    </div>
+                {% endif %}
+           
+                
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="navigation">
+    {{ knp_pagination_render(papeteries) }}
+</div>
+{% endblock %}

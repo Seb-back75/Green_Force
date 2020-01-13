@@ -24,6 +24,10 @@ class Produit
      * @ORM\Column(type="string", length=50)
      */
     private $libelle;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
 
      /**
      * @ORM\Column(type="string", length=255)
@@ -76,6 +80,18 @@ class Produit
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
@@ -92,7 +108,7 @@ class Produit
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
