@@ -59,6 +59,7 @@ class ProduitController extends AbstractController
             'produit' => $produit,
         ]);
     }
+  
 
     /**
      * @Route("/{id}/edit", name="produit_edit", methods={"GET","POST"})

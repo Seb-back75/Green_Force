@@ -1,9 +1,10 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Avis index{% endblock %}
+{% include "header.html.twig"%}
+
+{% block title %}{% endblock %}
 
 {% block body %}
-    <h1>Avis index</h1>
+    <h1>Avis</h1>
 
     <table class="table">
         <thead>
@@ -37,3 +38,4 @@
 
     <a href="{{ path('avis_new') }}">Create new</a>
 {% endblock %}
+{% include "footer.html.twig"%}
