@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entretien{% endblock %}
+
+{% block body %}
+    <h1>Entretien</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entretien.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ entretien.Libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entretien.Description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{asset('images/post/')}}{{ entretien.Image }}" style="width:75px;max-height:75px;"></td>
+            </tr>
+            <tr>
+                <th>Pa</th>
+                <td>{{ entretien.Pa }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ entretien.Pv }}</td>
+            </tr>
+            <tr>
+                <th>TVA</th>
+                <td>{{ entretien.TVA }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ entretien.Stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('entretien_index') }}">back to list</a>
+
+    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">edit</a>
+
+    {{ include('entretien/_delete_form.html.twig') }}
+{% endblock %}
