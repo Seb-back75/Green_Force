@@ -39,6 +39,8 @@ class ProduitController extends AbstractController
             $entityManager->persist($produit);
             $entityManager->flush();
 
+            $this->addFlash('notice', 'Un nouveau produit a été ajouté !!'); 
+
             return $this->redirectToRoute('produit_index');
         }
 

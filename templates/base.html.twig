@@ -8,6 +8,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    
+        {% for flash in app.session.flashBag.get('notice') %}
+            <div id="notice" class="success alert alert-success">
+                {{ flash }}
+            </div>
+        {% endfor %}
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
