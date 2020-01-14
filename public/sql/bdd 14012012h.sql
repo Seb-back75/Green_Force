@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 14 jan. 2020 à 09:59
+-- Généré le :  mar. 14 jan. 2020 à 12:02
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.1.33
 
@@ -40,7 +40,9 @@ CREATE TABLE `avis` (
 --
 
 INSERT INTO `avis` (`id`, `commentaire`, `user`, `date`) VALUES
-(1, 'Je suis super contente car j\'ai des produits écolos', 'C\'est COCO', '2019-04-05 03:04:00');
+(1, 'Je suis super content car j\'ai des produits écolos', 'Biizz Bureaux', '2019-04-05 03:04:00'),
+(2, 'J\'ai adoré pouvoir travailler avec cette entreprise la qualité est là !!!', 'Seb', '2020-01-04 11:39:00'),
+(3, 'Nous avons changé de partenaire car les restrictions écologiques sont devenues primordiales de ce fait nous sommes ravis de leur service !', 'Julien Martinez', '2020-01-07 16:24:00');
 
 -- --------------------------------------------------------
 
@@ -63,10 +65,11 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id`, `adresse_de_facturation`, `email`, `nom_entreprise`, `responsable`, `adresse_de_livraison`, `telephone`) VALUES
-(2, 'tghfdhgf', 'eliza.piatycheva@gmail.com', 'PIATYCHEVA Eliza', 'cvbcvbcbcv', '29 rue Jules Michelet', '0612086557'),
-(3, 'dfsgdgf', 'poule@gmail.com', 'Poulet Beau', 'cvbcvbcbcv', '25 rue du coq', '06644875147'),
-(4, 'rtet', 'elisa@gmail.com', 'fghfh fghh', '758678', 'dsf', '536586'),
-(5, '25 rue de mario', 'mario@gmail.com', 'Kart Mario', 'Mario', '25 rue  mario', '0612086557');
+(2, '29 rue des pommiers 78000 VERSAILLES', 'eliza.sanchez@electro-deco.com', 'Electro Deco', 'Eliza Sanchez', '29 rue des pommiers 78000 VERSAILLES', '0145889632'),
+(3, '25 rue du coq 78190 TRAPPES', 'buro.eco@gmail.com', 'Buro Eco', 'Jérôme Lacroix', '25 rue du coq 78190 TRAPPES', '0123665587'),
+(4, '25 rue du coq 78190 TRAPPES', 'julien.m@papperneeds.com', 'Papper Needs', 'Julien Martinez', '37 avenue des champs 69100 Villeurbanne LYON', '0166825478'),
+(5, '25 rue des fleurs 59300 FAMARS VALENCIENNES', 'seb.uppov@kart-concept.com', 'Kart Concept', 'Sébastien Uppov', '25 rue des fleurs 59300 FAMARS VALENCIENNES', '0625883647'),
+(6, '2 impasse de la baie 44210 PORNIC', 'nirina.mordes@biizz.fr', 'Biizz Bureaux', 'Nirina Mordes', '2 impasse de la baie 44210 PORNIC', '0265478963');
 
 -- --------------------------------------------------------
 
@@ -153,7 +156,7 @@ INSERT INTO `produit` (`id`, `libelle`, `pa`, `pv`, `tva`, `stock`, `image`, `de
 (18, 'Lot stylos', 4.5, 7.7, 20, 50, 'Stylo fournitures bureau papeterie.jpg', 'Lot de 3 stylos 100 % recyclables.'),
 (19, 'Bureaux design', 680, 1156, 20, 3, 'bureauUK design-Vogue.jpg', 'Bureau individuel avec rangements de style UK, vendu avec une commode. Fabrique en bois 100% recyclable et monté en France.'),
 (20, 'Ramette papier A3', 13, 22.1, 20, 100, 'ramette papier recycle blanc A3-80g-500-feuilles.jpg', 'Paquet de 500 feuilles blanche de papier 100% recyclé de qualité supérieure.'),
-(21, 'Ramette papier A4', 18, 30.6, 20, 100, 'ramette papier A4 100% reycle.jpg', 'Paquet de 500 feuilles blanche de papier 100% recyclé de qualité supérieure.');
+(25, 'Ramette papier A4', 18, 27, 20, 100, 'ramette papier recycle blanc A4-80g-500-feuilles.jpg', 'Paquet de 500 feuilles blanche de papier 100% recyclé de qualité supérieure.');
 
 --
 -- Index pour les tables déchargées
@@ -197,13 +200,13 @@ ALTER TABLE `produit`
 -- AUTO_INCREMENT pour la table `avis`
 --
 ALTER TABLE `avis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `commande`
@@ -215,7 +218,7 @@ ALTER TABLE `commande`
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
