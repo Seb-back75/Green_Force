@@ -38,4 +38,11 @@ class HomepageController extends AbstractController
     {
         return $this->render('homepage/mention.html.twig');
     }
+    /**
+     * @Route("/propos", name="propos")
+     */
+    public function propos()
+    {
+        return $this->render('homepage/propos.html.twig');
+    }
 }
