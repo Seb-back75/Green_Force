@@ -24,9 +24,10 @@ class SecurityController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $hash = $encoder->encodePassword($user, $user->getPassword());
+            //$hash = $encoder->encodePassword($user, $user->getPassword());
 
-            $user->setPassword($hash);
+            $user->setPassword(md5(uniqid(null,true)));
+
             $manager->persist($user);
             $manager->flush();
 
@@ -37,10 +38,16 @@ class SecurityController extends AbstractController
         ]);
         
     }
+
     /**
     * @route("/connexion", name="security_login")
     */
     public function login(){
         return $this->render('security/login.html.twig');
     }
+
+    /**
+     * @Route("/deconnexion", name="security_logout")
+     */
+    public function logout() {}
 }
