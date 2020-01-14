@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Papeterie index{% endblock %}
+
+{% block body %}
+    <h1>Papeterie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Pa</th>
+                <th>Pv</th>
+                <th>TVA</th>
+                <th>Stock</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for papeterie in papeteries %}
+            <tr>
+                <td>{{ papeterie.id }}</td>
+                <td>{{ papeterie.Libelle }}</td>
+                <td>{{ papeterie.Description }}</td>
+                <td><img src="{{asset('images/post/')}}{{ papeterie.image }}" style="width:75px;max-height:75px;"></td>
+                {# <td>{{ papeterie.Image }}</td> #}
+                <td>{{ papeterie.Pa }}</td>
+                <td>{{ papeterie.Pv }}</td>
+                <td>{{ papeterie.TVA }}</td>
+                <td>{{ papeterie.Stock }}</td>
+
+                <td>
+                    <a href="{{ path('papeterie_show', {'id': papeterie.id}) }}">show</a>
+                    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('papeterie_new') }}">Create new</a>
+{% endblock %}

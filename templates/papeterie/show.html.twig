@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Papeterie{% endblock %}
+
+{% block body %}
+    <h1>Papeterie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ papeterie.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ papeterie.Libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ papeterie.Description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+               <td><img src="{{asset('images/post/')}}{{ papeterie.image }}" style="width:75px;max-height:75px;"></td>
+            </tr>
+            <tr>
+                <th>Pa</th>
+                <td>{{ papeterie.Pa }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ papeterie.Pv }}</td>
+            </tr>
+            <tr>
+                <th>TVA</th>
+                <td>{{ papeterie.TVA }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ papeterie.Stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('papeterie_index') }}">back to list</a>
+
+    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">edit</a>
+
+    {{ include('papeterie/_delete_form.html.twig') }}
+{% endblock %}

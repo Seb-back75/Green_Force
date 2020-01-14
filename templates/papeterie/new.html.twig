@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Papeterie{% endblock %}
+
+{% block body %}
+    <h1>Create new Papeterie</h1>
+
+    {{ include('papeterie/_form.html.twig') }}
+
+    <a href="{{ path('papeterie_index') }}">back to list</a>
+{% endblock %}
