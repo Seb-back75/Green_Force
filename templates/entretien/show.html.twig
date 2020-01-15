@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Entretien{% endblock %}
+{% block title %}Equipements{% endblock %}
 
 {% block body %}
-    <h1>Entretien</h1>
+    <h1>Equipements</h1>
 
     <table class="table">
         <tbody>
@@ -42,9 +42,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('entretien_index') }}">back to list</a>
+    <a href="{{ path('entretien_index') }}">Revenir à la liste</a>
 
-    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">edit</a>
+    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">Modifier</a>
 
     {{ include('entretien/_delete_form.html.twig') }}
 {% endblock %}

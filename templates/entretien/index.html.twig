@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Entretien index{% endblock %}
+{% block title %}Equipements{% endblock %}
 
 {% block body %}
-    <h1>Entretien index</h1>
+    <h1>Equipements</h1>
 
     <table class="table">
         <thead>
@@ -31,17 +31,17 @@
                 <td>{{ entretien.TVA }}</td>
                 <td>{{ entretien.Stock }}</td>
                 <td>
-                    <a href="{{ path('entretien_show', {'id': entretien.id}) }}">show</a>
-                    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">edit</a>
+                    <a href="{{ path('entretien_show', {'id': entretien.id}) }}">Voir</a>
+                    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">Pas d'articles pour le moment</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('entretien_new') }}">Create new</a>
+    <a href="{{ path('entretien_new') }}">Créer un nouveau article</a>
 {% endblock %}

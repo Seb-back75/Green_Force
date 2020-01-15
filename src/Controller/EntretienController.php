@@ -39,6 +39,8 @@ class EntretienController extends AbstractController
             $entityManager->persist($entretien);
             $entityManager->flush();
 
+            $this->addFlash('notice', 'Un nouveau produit a été ajouté !!'); 
+
             return $this->redirectToRoute('entretien_index');
         }
 
