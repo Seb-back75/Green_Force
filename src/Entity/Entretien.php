@@ -61,6 +61,11 @@ class Entretien
      */
     private $Stock;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $equipements;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,6 +161,18 @@ class Entretien
     public function setStock(int $Stock): self
     {
         $this->Stock = $Stock;
+
+        return $this;
+    }
+
+    public function getEquipements(): ?string
+    {
+        return $this->equipements;
+    }
+
+    public function setEquipements(string $equipements): self
+    {
+        $this->equipements = $equipements;
 
         return $this;
     }
