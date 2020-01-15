@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PapeterieController extends AbstractController
 {
     /**
-     * @Route("/", name="papeterie_index", methods={"GET"})
+     * @Route("/", name="papeterie", methods={"GET"})
      */
     public function index(PapeterieRepository $papeterieRepository): Response
     {

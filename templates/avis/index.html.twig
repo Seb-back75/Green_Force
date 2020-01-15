@@ -1,11 +1,18 @@
 
 {% include "header.html.twig"%}
-
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 avv row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
 {% block title %}{% endblock %}
 
 {% block body %}
-    <h1>Avis</h1>
-
+    
+    <div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
+   <br> <h1>Avis</h1> 
     <table class="table">
         <thead>
             <tr>
@@ -35,7 +42,15 @@
         {% endfor %}
         </tbody>
     </table>
-
     <a href="{{ path('avis_new') }}">Create new</a>
+ </div>
+    </div>
+</div>
+
+
+
 {% endblock %}
+</section>
+    
+
 {% include "footer.html.twig"%}
