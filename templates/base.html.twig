@@ -9,12 +9,14 @@
     </head>
     <body>
         <div class="container">
-            <button>
-                <a href="{{ path('security_login') }}">Connexion !</a>
-            </button>
-            <button>
-                <a href="{{ path('security_logout') }}">Deconnexion !</a>
-            </button>
+            {% if not app.user %}
+                <button>
+                    <a href="{{ path('security_login') }}">Connexion !</a>
+                </button>
+            {% else %}
+                <button>
+                    <a href="{{ path('security_logout') }}">Deconnexion !</a>
+                </button>
             {% block body %}{% endblock %}
         </div>
         {% block javascripts %}{% endblock %}
