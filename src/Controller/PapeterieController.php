@@ -39,6 +39,8 @@ class PapeterieController extends AbstractController
             $entityManager->persist($papeterie);
             $entityManager->flush();
 
+            $this->addFlash('notice', 'Un nouveau produit a été ajouté !!'); 
+
             return $this->redirectToRoute('papeterie_index');
         }
 
