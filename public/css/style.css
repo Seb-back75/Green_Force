@@ -5,7 +5,7 @@ section
 .gen
 {
     
-    height: auto;
+    min-height: 50vh;
     margin-bottom: 10px;
 }
 .textf
