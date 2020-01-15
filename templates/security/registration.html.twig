@@ -2,16 +2,80 @@
 
 {% block body %}
 
-<h1>Bonjours a tous ! </h1>
+<h1>Creation compte client ! </h1>
+<form action="{{ path('security_login') }}" method="post">
+        <div class="form-group">Entreprise :
+            <input placeholder="Nommer votre Entreprise ..." required name="_entreprisename" type="text" class="form-control">
+        </div>
+        <div class="form-group">Responsable :
+            <input placeholder="Personne à contacter ..." required name="_username" type="text" class="form-control">
+        </div>
+        <div class="row">
+            <div class="form-group col-8 col-ms-8 col-md-8 col-lg-8 col-xl-8 mx-auto">Email :
+                <input placeholder="Adresse email ..." required name="_email" type="text" class="form-control">
+            </div>
+            <div class="form-group col-4 col-ms-4 col-md-4 col-lg-4 col-xl-4 mx-auto">Téléphone :
+                <input placeholder="Téléphone à contacter" required name="_tel" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">Mot de passe :
+                <input placeholder="Mot de passe ..." required name="_password" type="password" class="form-control">
+            </div>
+            <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">Confirmez le mot de passe :
+                <input placeholder="Mot de passe ..." required name="_password" type="password" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-7 col-ms-7 col-md-7 col-lg-7 col-xl-7 mx-auto">Adressse de livraison :
+                <input placeholder="Adresse ..." required name="_adresse" type="text" class="form-control">
+            </div>
+            <div class="form-group col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3 mx-auto">Ville :
+                <input placeholder="Ville ..." required name="_ville" type="text" class="form-control">
+            </div>
+            <div class="form-group col-2 col-ms-2 col-md-2 col-lg-2 col-xl-2 mx-auto">Code Postal :
+                <input placeholder="Code Postal ..." required name="_cp" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-7 col-ms-7 col-md-7 col-lg-7 col-xl-7 mx-auto">Adressse de facturation :
+                <input placeholder="Adresse ..." required name="_adress" type="text" class="form-control">
+            </div>
+            <div class="form-group col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3 mx-auto">Ville :
+                <input placeholder="Ville ..." required name="_ville" type="text" class="form-control">
+            </div>
+            <div class="form-group col-2 col-ms-2 col-md-2 col-lg-2 col-xl-2 mx-auto">Code Postal :
+                <input placeholder="Code Postal ..." required name="_cp" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">N°T.V.A :
+                <input placeholder="T.V.A ..." required name="_tva" type="text" class="form-control">
+            </div>
+            <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">N°SIRET :
+                <input placeholder="SIRET ..." required name="_siret" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">Kbis :
+                <input required name="_kbis" type="file" class="form-control">
+            </div>
+            <div class="form-group ">Moyen de payment : (Délai de 30 jours à date de la facture)
+                <br>
+                <p>
+                    <input type="radio" name="_payment" value="cheque">Cheque
+                    <input type="radio" name="_payment" value="virement">Virement
+                    <input type="radio" name="_payment" value="paypal">Paypal
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Inscription !</button>
+        </div>
+        
+        
+    </form>
 
-{{ form_start(form) }}
-{{ form_row(form.entreprise, {'label': 'Nom de l\'entreprise','attr': {'placeholder': 'Nom de l\'entreprise ...'}})}}
-{{ form_row(form.email, {'label': 'Adresse Email','attr': {'placeholder': 'Adresse email ...'}})}}
-{{ form_row(form.password, {'label': 'Mot de passe','attr': {'placeholder': 'mot de passe'}})}}
-{{ form_row(form.confirm_password, {'label': 'Confirmer le mot de passe','attr': {'placeholder': 'Répéter le mot de passe'}})}}
-
-<button type="submit" class="btn btn-success">Inscription</button>
-{{ form_end(form) }}
 
 
 {% endblock %}
