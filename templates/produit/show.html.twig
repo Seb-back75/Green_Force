@@ -3,6 +3,17 @@
 {% block title %}Produits d'entretien{% endblock %}
 
 {% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 entr row justify-content-center"><div class="col-md-3 title">
+ </div>
+    </div>
+</div>
+
+<section>
+<div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
     <h1>Produits d'entretien</h1>
 
     <table class="table">
@@ -47,4 +58,7 @@
     <a href="{{ path('produit_edit', {'id': produit.id}) }}">modifier</a>
 
     {{ include('produit/_delete_form.html.twig') }}
+    </div>   
+    </div>   
+    </div> 
 {% endblock %}
