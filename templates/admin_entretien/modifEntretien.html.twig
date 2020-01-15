@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Produit Entretien{% endblock %}
+
+{% block monTitre %}Produits Entretiens{{ prodEntretiens.description}}{% endblock %}
+{% block body %}
+{{form_start(form)}}
+
+    {{form_widget(form)}}
+    <a href="{{path('modifEntretien',{'id' : prodEntretiens.id})}}" class="btn btn-primary">Retour</a>
+    <input type="submit" value="vaider" class ="btn btn-success">
+{{form_end(form)}}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Produits d'Entretiens{% endblock %}
+
+{% block monTitre %}Liste des Produits d'Entretiens{% endblock %}
+{% block body %}
+{% if admin_entretien %}
+<a href="{{path('creationEntretien')}}" class="d-block btn btn-success">Ajouter</a>
+{% endif %}
+<div class="row no-gutters">
+    {% for prod in prodEntretiens %}
+        <div class="col-10 col-lg-6 p-1">
+            <div class="card mb-3">
+                <div class="row no-gutters align-items-center p-2">
+                    <div class="col-12 col-md-4">
+                      <a href="{{path('affichage_prod',{'id' : prod.id})}}"><img src="{{asset('images/entretiens/' ~ prod.image)}}" class="card-img"></a>
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h5 class="card-title">{{prod.description}}</h5>
+                            <p class="card-text">
+                                <div>Marque : {{prod.modeleprod.marqueprod.libelle}}</div>
+                                <div>Type : {{prod.modeleprod.utilisation}} </div>
+
+                                <div>Couleur : {{prod.modeleprod.couleur}}</div>
+                                <div>Prix : {{prod.prix}}€</div>
+                                
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                  {% if admin_entretien %}
+                    <div class="row no-gutters">
+                        <a href="{{path('modifEntretien',{'id' : prod.id})}}" class="col btn btn-warning">Modifier</a>
+                         <form method="post" class="col" action="{{path('supEntretien',{'id': prod.id})}}" onsubmit="return confirm('Voulez-vous vraiment supprimer ?');">
+                            <input type="hidden" name="_method" value="SUP">
+                            <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ prod.id)}}">
+                            <input type="submit" class="btn btn-danger w-100" value="supprimer">
+                        </form>
+
+                    </div>
+                {% endif %}
+           
+                
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="navigation">
+    {{ knp_pagination_render(prodEntretiens) }}
+</div>
+{% endblock %}

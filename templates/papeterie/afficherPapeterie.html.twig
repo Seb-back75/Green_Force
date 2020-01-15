@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Produits d'Entretiens{% endblock %}
+
+{% block monTitre %}Details du Produit {{papeteries.description}} {% endblock %}
+{% block body %}
+<div class="row no-gutters">
+  
+        <div class="col-10 col-lg-6 p-1">
+            <div class="card mb-3">
+                <div class="row no-gutters align-items-center p-2">
+               
+                    <div class="col-12 col-md-4">
+                      <a href="{{path('affichage_prod',{'id' : papeteries.id})}}"><img src="{{asset('images/papeterie/' ~ papeteries.image)}}" class="card-img"></a>
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h5 class="card-title">{{papeteries.description}}</h5>
+                            <p class="card-text">
+                                <div>Marque : {{papeteries.type.marque.libelle}}</div>
+                                <div>Type : {{papeteries.type.utilisation}} </div>
+
+                                <div>Couleur : {{papeteries.type.couleur}}</div>
+                                <div>Prix : {{papeteries.prix}}€</div>
+                                
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                 
+           
+                
+            </div>
+        </div>
+ 
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipements{% endblock %}
+
+{% block monTitre %}Liste des équipements{% endblock %}
+{% block body %}
+
+{{form_start(form)}}
+<div class="row no-gutters align-items-center text-center">
+    <div class="col">
+        {{form_row(form.minPrix)}}
+    </div>
+    <div class="col">
+        {{form_row(form.maxPrix)}}
+    </div>
+    <div class="col-2">
+        <input type="submit" value="rechercher" class="btn btn-info">
+    </div>
+
+    
+{{form_end(form)}}
+{% if admin %}
+<a href="" class="d-block btn btn-success">Ajouter</a>
+{% endif %}
+<div class="row no-gutters">
+    {% for bureau in bureaux %}
+        <div class="col-10 col-lg-6 p-1">
+            <div class="card mb-3">
+                <div class="row no-gutters align-items-center p-2">
+                    <div class="col-12 col-md-4">
+                        <a href="{{path('affichageBureau',{'id' : bureau.id})}}"><img src="{{asset('images/equipements/' ~ bureau.image)}}" class="card-img">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <h5 class="card-title">{{bureau.intitule}}</h5>
+                            <p class="card-text">
+                                <div>Categorie : {{bureau.modele.categorie.libelle}}</div>
+                                <div>Modele : {{bureau.modele.libelle}} </div>
+                                <div>Couleur : {{bureau.modele.couleur}}</div>
+                                <div>Prix : {{bureau.prix}}€</div>
+                                
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                  {% if admin %}
+                    <div class="row no-gutters">
+                        <a href="{{path('modifBureau',{'id' : bureau.id})}}" class="col btn btn-warning">Modifier</a>
+                         <form method="post" class="col" action="{{path('supBureau',{'id':bureau.id})}}" onsubmit="return confirm('Voulez-vous vraiment supprimer ?');">
+                            <input type="hidden" name="_method" value="SUP">
+                            <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ bureau.id)}}">
+                            <input type="submit" class="btn btn-danger w-100" value="supprimer">
+                        </form>
+
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="navigation">
+    {{ knp_pagination_render(bureaux) }}
+</div>
+{% endblock %}
