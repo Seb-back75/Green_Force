@@ -1,5 +1,5 @@
-{% include "header.html.twig" %}
-
+{% extends 'base.html.twig' %}
+{% block body %}
 <section>
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
@@ -50,5 +50,4 @@ STOCKAGE DES DONNÉES : Toutes nos données sont stockées sur des serveurs séc
 
 
 </section>
-
-{% include "footer.html.twig"%}
+{% endblock %}

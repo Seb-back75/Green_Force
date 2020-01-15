@@ -1,4 +1,4 @@
-{% include "header.html.twig"%}
+{% extends 'base.html.twig' %}
 
 
 {% block title %}{% endblock %}
@@ -59,9 +59,6 @@
 
     <a href="{{ path('papeterie_new') }}">Créer un nouveau article</a>
 {% endblock %}
- </div>
-    </div>
-</div>
 
-</section>
-{% include "footer.html.twig"%}
+
+
