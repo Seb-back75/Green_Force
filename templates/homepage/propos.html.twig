@@ -1,5 +1,5 @@
-{% include "header.html.twig" %}
-
+{% extends 'base.html.twig' %}
+{% block body %}
 <div class="container-fluid">
    <div class="row justify-content-md-center">
        <div class="col-md-12 prop row justify-content-center"><div class="col-md-3 title"></div>
@@ -29,5 +29,4 @@ La conscience écologique de Green_ Force a encore du chemin à parcourir, mais 
 </div>
 
 </section>
-
-{% include "footer.html.twig" %}
+{% endblock %}

@@ -3,6 +3,18 @@
 {% block title %}Equipements{% endblock %}
 
 {% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 equip row justify-content-center"><div class="col-md-3 title">
+
+       </div>
+    </div>
+</div>
+
+<section>
+<div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
     <h1>Equipements</h1>
 
     <table class="table">
@@ -47,4 +59,7 @@
     <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">Modifier</a>
 
     {{ include('entretien/_delete_form.html.twig') }}
+    </div>   
+    </div>   
+    </div> 
 {% endblock %}

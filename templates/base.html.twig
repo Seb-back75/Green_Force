@@ -87,7 +87,7 @@ $('#navigation').removeClass("fixNavigation");
         <a class="nav-link " href="{{ path('propos')}}" id="btn4">A propos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="contact.php" id="btn5">Contact</a>
+        <a class="nav-link " href="{{ path('contact')}}" id="btn5">Contact</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="{{ path('avis_index')}}" id="btn5">avis</a>
@@ -114,13 +114,11 @@ $('#navigation').removeClass("fixNavigation");
             </div>
         {% endfor %}
 
+
     {% block body %}
-    
+     
     {% endblock %}>
-    </div>   
-    </div>   
-    </div>
-<footer>
+  <footer>
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-md-3 fat1">
