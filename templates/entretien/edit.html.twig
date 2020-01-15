@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Equipements{% endblock %}
+
+{% block body %}
+    <h1>Modifier Equipements</h1>
+
+    {{ include('entretien/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('entretien_index') }}">revenir à la liste</a>
+
+    {{ include('entretien/_delete_form.html.twig') }}
+{% endblock %}
