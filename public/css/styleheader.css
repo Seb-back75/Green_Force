@@ -1,3 +1,10 @@
+.fixNavigation{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    /* Mise en forme */
+    width: 100%; /* <-- Largeur de votre site */
+    }
 .herd
 {
     background-color: black;
@@ -40,6 +47,13 @@
     background-image: url(../img/contact.jpg);
     background-size: cover;
 }
+.avv
+{
+    
+    height: 40vh;
+    background-image: url(../img/avis.jpg);
+    background-size: cover;
+}
 .title
 {color:white;
 text-shadow:1px 3px 5px #4fa626;
@@ -51,7 +65,7 @@ font-family: Apple Chancery, cursive;
 }
 .taille
 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     justify-content: end;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     

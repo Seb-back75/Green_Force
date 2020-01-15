@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}"> 
     <title>Green Force</title>
 </head>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script>
     $(document).ready(function(){
 var bouton1=('#btn1,#btn2,#btn3,#btn4,#btn5')
@@ -35,11 +36,30 @@ $(bouton1).mouseleave(function(){
         "color":"#7c7c7d"
     })
 })
+$(function(){
+// On recupere la position du bloc par rapport au haut du site
+var position_top_raccourci = $("#navigation").offset().top;
+
+//Au scroll dans la fenetre on déclenche la fonction
+$(window).scroll(function () {
+
+//si on a defile de plus de 150px du haut vers le bas
+if ($(this).scrollTop() > position_top_raccourci) {
+
+//on ajoute la classe "fixNavigation" a <div id="navigation">
+$('#navigation').addClass("fixNavigation"); 
+} else {
+
+//sinon on retire la classe "fixNavigation" a <div id="navigation">
+$('#navigation').removeClass("fixNavigation");
+}
+});
+});
     });
 
 </script>
 <body>
-    <header>
+    <header id='navigation'>
         
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <nav class="navbar navbar-light bg-light">
@@ -55,7 +75,9 @@ $(bouton1).mouseleave(function(){
   <div class="collapse navbar-collapse taille" id="navbarNav">
     <ul class="navbar-nav ">
       <li class="nav-item ">
+
         <a class="nav-link " href="{{path('papeterie_index')}}" id="btn1">Papeterie<span class="sr-only">(current)</span></a>
+
       </li>
       <li class="nav-item">
         <a class="nav-link " href="{{path('entretiens')}}" id="btn2">Produits d'entretien</a>
@@ -70,7 +92,7 @@ $(bouton1).mouseleave(function(){
         <a class="nav-link " href="contact.php" id="btn5">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="/Green_Force/public/index.php/avis/" id="btn5">avis</a>
+        <a class="nav-link " href="{{ path('avis_index')}}" id="btn5">avis</a>
       </li>
       
       </li>
