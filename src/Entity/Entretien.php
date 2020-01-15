@@ -62,7 +62,7 @@ class Entretien
     private $Stock;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $equipements;
 
