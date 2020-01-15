@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Papeterie{% endblock %}
+{% block title %}Modifier Papeterie{% endblock %}
 
 {% block body %}
-    <h1>Edit Papeterie</h1>
+    <h1>Modifier Papeterie</h1>
 
-    {{ include('papeterie/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('papeterie/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('papeterie_index') }}">back to list</a>
+    <a href="{{ path('papeterie_index') }}">revenir à la liste</a>
 
     {{ include('papeterie/_delete_form.html.twig') }}
 {% endblock %}

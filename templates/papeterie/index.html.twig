@@ -1,5 +1,6 @@
 {% include "header.html.twig"%}
 
+
 {% block title %}{% endblock %}
 
 {% block body %}
@@ -14,6 +15,7 @@
     <div class="row col-md-12 justify-content-center gen">
     <div class="col-md-8 gen">
    <br> <h1>Papeterie</h1>
+
 
     <table class="table">
         <thead>
@@ -43,19 +45,19 @@
                 <td>{{ papeterie.Stock }}</td>
 
                 <td>
-                    <a href="{{ path('papeterie_show', {'id': papeterie.id}) }}">show</a>
-                    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">edit</a>
+                    <a href="{{ path('papeterie_show', {'id': papeterie.id}) }}">Voir</a>
+                    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">Pas d'articles pour le moment</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('papeterie_new') }}">Create new</a>
+    <a href="{{ path('papeterie_new') }}">Créer un nouveau article</a>
 {% endblock %}
  </div>
     </div>
