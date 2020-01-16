@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Entreprise</th>
+                <td>{{ user.entreprise }}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ user.responsable }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ user.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ user.mdp }}</td>
+            </tr>
+            <tr>
+                <th>Confirmer Mdp</th>
+                <td>{{ user.confirm_mdp }}</td>
+            </tr>
+            <tr>
+                <th>AdresseL</th>
+                <td>{{ user.adresseL }}</td>
+            </tr>
+            <tr>
+                <th>VilleL</th>
+                <td>{{ user.villeL }}</td>
+            </tr>
+            <tr>
+                <th>CpL</th>
+                <td>{{ user.CpL }}</td>
+            </tr>
+            <tr>
+                <th>AdresseF</th>
+                <td>{{ user.adresseF }}</td>
+            </tr>
+            <tr>
+                <th>VilleF</th>
+                <td>{{ user.villeF }}</td>
+            </tr>
+            <tr>
+                <th>CpF</th>
+                <td>{{ user.CpF }}</td>
+            </tr>
+            <tr>
+                <th>NTVA</th>
+                <td>{{ user.NTVA }}</td>
+            </tr>
+            <tr>
+                <th>NSIRET</th>
+                <td>{{ user.NSIRET }}</td>
+            </tr>
+            <tr>
+                <th>NKBIS</th>
+                <td>{{ user.NKBIS }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    
+    
+    
+    
+    
+    
+    
+    {{ include('user/_delete_form.html.twig') }}
+{% endblock %}

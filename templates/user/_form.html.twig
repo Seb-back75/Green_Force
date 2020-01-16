@@ -1,0 +1,58 @@
+{{ form_start(form) }}
+    <div class="form-group">
+    {{ form_row(form.entreprise, {'label': 'Entreprise', 'attr':{'placeholder' : 'Nommer votre Entreprise ...', 'class':'form-control'}}) }}
+    </div>
+    <div class="form-group">
+    {{ form_row(form.responsable, {'label': 'Responsable', 'attr':{'placeholder' : 'Nommer votre Responsable ...', 'class':'form-control'}}) }}
+    </div>
+    <div class="row">
+        <div class="form-group col-8 col-ms-8 col-md-8 col-lg-8 col-xl-8 mx-auto">
+        {{ form_row(form.email, {'label': 'Email', 'attr':{'placeholder' : 'Nommer votre email ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-4 col-ms-4 col-md-4 col-lg-4 col-xl-4 mx-auto">
+        {{ form_row(form.telephone, {'label': 'Telephone', 'attr':{'placeholder' : 'Nommer votre telephone ...', 'class':'form-control' }}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">
+        {{ form_row(form.mdp, {'label': 'Mot de passe', 'attr':{'placeholder' : 'Mdp ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">
+        {{ form_row(form.confirm_mdp, {'label': 'Confirmer le mot de passe', 'attr':{'placeholder' : 'Confirmer Mdp ...' , 'class':'form-control'}}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-7 col-ms-7 col-md-7 col-lg-7 col-xl-7 mx-auto">
+        {{ form_row(form.adresseL, {'label': 'Adresse de Livraison', 'attr':{'placeholder' : 'Livraison ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3 mx-auto">
+        {{ form_row(form.villeL, {'label': 'Ville', 'attr':{'placeholder' : 'Nommer votre ville ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-2 col-ms-2 col-md-2 col-lg-2 col-xl-2 mx-auto">
+        {{ form_row(form.CpL, {'label': 'Code postal', 'attr':{'placeholder' : 'CP ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-7 col-ms-7 col-md-7 col-lg-7 col-xl-7 mx-auto">
+        {{ form_row(form.adresseF, {'label': 'Adresse de Facturation', 'attr':{'placeholder' : 'Facturation ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3 mx-auto">
+        {{ form_row(form.villeF, {'label': 'Ville', 'attr':{'placeholder' : 'Nommer votre ville ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-2 col-ms-2 col-md-2 col-lg-2 col-xl-2 mx-auto">
+        {{ form_row(form.CpF, {'label': 'Code postal', 'attr':{'placeholder' : 'CP ...', 'class':'form-control' }}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-4 col-ms-4 col-md-4 col-lg-4 col-xl-4 mx-auto">
+        {{ form_row(form.NTVA, {'label': 'N°TVA', 'attr':{'placeholder' : 'N°TVA ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-4 col-ms-4 col-md-4 col-lg-4 col-xl-4 mx-auto">
+        {{ form_row(form.NSIRET, {'label': 'N°SIRET', 'attr':{'placeholder' : 'N°SIRET ...', 'class':'form-control' }}) }}
+        </div>
+        <div class="form-group col-4 col-ms-4 col-md-4 col-lg-4 col-xl-4 mx-auto">
+        {{ form_row(form.NKBIS, {'label': 'N°KBIS', 'attr':{'placeholder' : 'N°KBIS ...', 'class':'form-control' }}) }}
+        </div>
+    </div>
+
+    <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+
+{{ form_end(form) }}

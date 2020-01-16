@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Papeterie{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 papt row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
+    <br>
+    <h1>Papeterie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ papeterie.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ papeterie.Libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ papeterie.Description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+               <td><img src="{{asset('images/post/')}}{{ papeterie.image }}" style="width:75px;max-height:75px;"></td>
+            </tr>
+            <tr>
+                <th>Pa</th>
+                <td>{{ papeterie.Pa }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ papeterie.Pv }}</td>
+            </tr>
+            <tr>
+                <th>TVA</th>
+                <td>{{ papeterie.TVA }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ papeterie.Stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('papeterie_index') }}">revenir à la liste</a>
+
+    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">modifier</a>
+     <a href="{{path('cart_add', {'id': papeterie.id })}}" class="btn btn-success float-right">
+                        <i class="fa fa-shopping-cart"></i>
+                        Ajouter
+                    </a>
+
+    {{ include('papeterie/_delete_form.html.twig') }}
+     </div>
+    </div>
+</div>
+{% endblock %}

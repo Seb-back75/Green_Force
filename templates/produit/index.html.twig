@@ -1,9 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produit index{% endblock %}
+{% block title %}Produits d'entretien{% endblock %}
 
 {% block body %}
-    <h1>Produit index</h1>
+    <div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 entr row justify-content-center"><div class="col-md-3 title">
+ </div>
+    </div>
+</div>
+
+<section>
+<div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
+    <h1>Produits d'entretien</h1>
 
     <table class="table">
         <thead>
@@ -32,17 +43,24 @@
                 <td>{{ produit.stock }}</td>
                 
                 <td>
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                    <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
+                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">Modifier</a>
+                     <a href="{{path('cart_add', {'id': produit.id })}}" class="btn btn-success float-right">
+                        <i class="fa fa-shopping-cart"></i>
+                        Ajouter
+                    </a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Pas d'articles pour le moment</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('produit_new') }}">Create new</a>
+    <a href="{{ path('produit_new') }}">Créer un nouveau article</a>
+    </div>   
+    </div>   
+    </div> 
 {% endblock %}

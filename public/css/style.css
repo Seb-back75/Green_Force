@@ -1,0 +1,21 @@
+section
+{
+    height: auto;
+}
+.gen
+{
+    
+    min-height: 60vh;
+    margin-bottom: 10px;
+}
+.textf
+{font-family: Apple Chancery, cursive;}
+.imgdex
+{
+height: auto;
+width: auto;
+}
+.carcv
+{
+    color: #4fa626;
+}
