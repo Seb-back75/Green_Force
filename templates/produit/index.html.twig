@@ -45,6 +45,8 @@
                 <td>
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
                     <a href="{{ path('produit_edit', {'id': produit.id}) }}">Modifier</a>
+                    <a href="{{ path('cart_add', {'id': produit.id}) }}">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}

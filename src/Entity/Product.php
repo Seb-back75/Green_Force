@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository")
  */
-class Commande
+class Product
 {
     /**
      * @ORM\Id()
@@ -44,7 +44,7 @@ class Commande
     private $ttva;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="float")
      */
     private $tttc;
 
