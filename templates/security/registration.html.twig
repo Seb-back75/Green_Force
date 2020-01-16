@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% extends 'show.html.twig' %}
 {% block body %}
 
 <h1>Creation compte client ! </h1>
@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="form-group col-8 col-ms-8 col-md-8 col-lg-8 col-xl-8 mx-auto">Email :
-                <input placeholder="Adresse email ..." required name="_email" type="text" class="form-control">
+                <input  required name="_email" type="text" class="form-control">
             </div>
             <div class="form-group col-4 col-ms-4 col-md-4 col-lg-4 col-xl-4 mx-auto">Téléphone :
                 <input placeholder="Téléphone à contacter" required name="_tel" type="text" class="form-control">
@@ -59,14 +59,6 @@
         <div class="row">
             <div class="form-group col-6 col-ms-6 col-md-6 col-lg-6 col-xl-6 mx-auto">Kbis :
                 <input required name="_kbis" type="file" class="form-control">
-            </div>
-            <div class="form-group ">Moyen de payment : (Délai de 30 jours à date de la facture)
-                <br>
-                <p>
-                    <input type="radio" name="_payment" value="cheque">Cheque
-                    <input type="radio" name="_payment" value="virement">Virement
-                    <input type="radio" name="_payment" value="paypal">Paypal
-                </p>
             </div>
         </div>
         <div class="form-group">
