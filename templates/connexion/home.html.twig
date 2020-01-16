@@ -1,0 +1,12 @@
+
+{% extends 'base.html.twig' %}
+
+<form method="post" action="{{ path('login') }}" class="home-form">
+    <h2 class="form-signin-heading">Connection</h2>
+    {% if error is defined %}
+
+    {{ error.messageKey|trans(error.messageData, ‘security’) }}
+{% endif %} <label for= »inputUserName » class= »sr-only »>Username</label> <input type= »text » id= »inputUserName » name= »_username » class= »form-control » placeholder= »Username » required autofocus> <label for= »inputPassword » class= »sr-only »>Password</label> <input type= »password » id= »inputPassword » name= »_password » class= »form-control » placeholder= »Password » required>
+
+Remember Me
+<!– Ici on définit la page ou on sera redirigé une fois la connexion réussie C’est également faisable depuis le security.yaml –> <input type= »hidden » name= »_target_path » value= »dashboard » /> <button class= »btn btn-lg btn-primary btn-block » type= »submit »>Log In</button> </form>
