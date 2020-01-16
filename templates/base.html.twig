@@ -20,6 +20,8 @@
 <script>
     $(document).ready(function(){
 var bouton1=('#btn1,#btn2,#btn3,#btn4,#btn5')
+var logo1='#btn6'
+var cadi1='#btn7'
 
 $(bouton1).mouseenter(function(){
     $(this).css({
@@ -27,15 +29,17 @@ $(bouton1).mouseenter(function(){
         "color": "#4fa727",
         "transition":"0.5s",
         
-
-    });
+     });
 });
 $(bouton1).mouseleave(function(){
     $(this).css({
         "font-size":"1em",
-        "color":"#7c7c7d"
-    })
-})
+        "color":"#7c7c7d",
+        
+    });
+});
+
+
 $(function(){
 // On recupere la position du bloc par rapport au haut du site
 var position_top_raccourci = $("#navigation").offset().top;
@@ -55,6 +59,7 @@ $('#navigation').removeClass("fixNavigation");
 }
 });
 });
+
     });
 
 </script>
@@ -68,6 +73,7 @@ $('#navigation').removeClass("fixNavigation");
     
   </a>
 </nav>
+    
   <a class="navbar-brand " href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -90,11 +96,19 @@ $('#navigation').removeClass("fixNavigation");
         <a class="nav-link " href="{{ path('contact')}}" id="btn5">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="{{ path('avis_index')}}" id="btn5">avis</a>
+        <a class="nav-link " href="{{ path('avis_index')}}" id="btn5">Avis</a>
       </li>
-      
-      </li>
-    </ul>
+      </ul>
+      <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand nav-pers" href="">
+    <a class="bouton_banniere" href="web_banniere.php"></a>
+   </a>
+     </nav>
+      <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand nav-pers" href="/Green_Force/public/index.php">
+    <a class="bouton_banniere1" href="web_banniere.php"></a>
+  </a>
+     </nav>
   </div>
 </nav>
 
