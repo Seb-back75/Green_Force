@@ -25,7 +25,7 @@ class ContactController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            $this->addFlash('notice', 'Un nouveau contact a été ajouté !!'); 
+            $this->addFlash('notice', 'Votre message a bien été envoyé !!'); 
 
             return $this->redirectToRoute('produit_index');
         }
