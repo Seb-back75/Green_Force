@@ -38,6 +38,52 @@ h3
 }
 .imglogo
 {
-    height: 140px;
-    width: 140px;
+    height: 100px;
+    width: 100px;
+}
+.bouton_fac {
+    background-image: url(../img/facebooka.png);
+    background-size: cover;
+    width: 100px;
+    height:100px;
+    transition:0.5s;
+display: block;}
+a.bouton_fac:hover {
+    background-image: url(../img/facebookb.png);
+    background-size: cover;
+    width: 100px;
+    height:100px;
+    
+}
+a.boutontwit {
+    background-image: url(../img/Twittera.png);
+    background-size: cover;
+    width: 120px;
+    height:100px;
+    transition:0.5s;
+    display: block;}
+a.boutontwit:hover {
+    background-image: url(../img/Twitterb.png);
+    background-size: cover;
+    width: 120px;
+    height:100px;
+    
+}
+a.bouton_inst {
+    background-image: url(../img/instagrama.png);
+    background-size: cover;
+    width: 100px;
+    height:100px;
+    transition:0.5s;
+    display: block;}
+a.bouton_inst:hover {
+    background-image: url(../img/instagramb.png);
+    background-size: cover;
+    width: 100px;
+    height:100px;
+    
+}
+.test{
+    height: 16vh;
+    border: 1px solid black;
 }

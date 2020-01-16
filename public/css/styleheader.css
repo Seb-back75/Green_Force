@@ -5,12 +5,6 @@
     /* Mise en forme */
     width: 100%; /* <-- Largeur de votre site */
     }
-.part
-{
-    border: 1px solid black;
-
-}
-
 .nav-pers{margin-left: 80px}
 
 a.bouton_banniere {
@@ -57,7 +51,7 @@ a.bouton_banniere1:hover {
     height: 40vh;
     background-image: url(../img/papeterie.jpg);
     background-size: cover;
-    width: ;
+    
 }
 .entr
 {
