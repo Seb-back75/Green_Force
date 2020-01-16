@@ -44,46 +44,46 @@ h3
 .bouton_fac {
     background-image: url(../img/facebooka.png);
     background-size: cover;
-    width: 100px;
-    height:100px;
+    width: 70px;
+    height:70px;
     transition:0.5s;
 display: block;}
 a.bouton_fac:hover {
     background-image: url(../img/facebookb.png);
     background-size: cover;
-    width: 100px;
-    height:100px;
+    width: 70px;
+    height:70px;
     
 }
 a.boutontwit {
     background-image: url(../img/Twittera.png);
     background-size: cover;
-    width: 120px;
-    height:100px;
+    width: 90px;
+    height:70px;
     transition:0.5s;
     display: block;}
 a.boutontwit:hover {
     background-image: url(../img/Twitterb.png);
     background-size: cover;
-    width: 120px;
-    height:100px;
+    width: 90px;
+    height:70px;
     
 }
 a.bouton_inst {
     background-image: url(../img/instagrama.png);
     background-size: cover;
-    width: 100px;
-    height:100px;
+    width: 90px;
+    height:90px;
     transition:0.5s;
     display: block;}
 a.bouton_inst:hover {
     background-image: url(../img/instagramb.png);
     background-size: cover;
-    width: 100px;
-    height:100px;
+    width: 90px;
+    height:90px;
     
 }
 .test{
     height: 16vh;
-    border: 1px solid black;
+    
 }
