@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
     <div class="col-md-8 gen">
-    <h1>Equipements</h1>
+    <h1><p class="textf">Equipements<p></h1>
 
     <table class="table">
         <thead>
@@ -50,13 +50,13 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">Pas d'articles pour le moment</td>
+                <td colspan="9"><p class="textf">Pas d'articles pour le moment<P></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('entretien_new') }}">Créer un nouveau article</a>
+    <a href="{{ path('entretien_new') }}"><p class="textf">Créer un nouveau article<p></a>
    
     </div>   
     </div>   
