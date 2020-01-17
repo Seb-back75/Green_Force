@@ -16,6 +16,13 @@ class HomepageController extends AbstractController
             'controller_name' => 'HomepageController',
         ]);
     }
+    /**
+     * @Route("/connec", name="connec")
+     */
+    public function connec()
+    {
+        return $this->render('homepage/connec.html.twig');
+    }
 
     /**
      * @Route("/conditions", name="conditions")
