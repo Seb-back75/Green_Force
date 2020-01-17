@@ -3,92 +3,47 @@
 namespace App\Controller;
 
 use App\Entity\Commande;
+use App\Service\Cart\CartSevice;
 use App\Form\CommandeType;
 use App\Repository\CommandeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/commande")
- */
 class CommandeController extends AbstractController
 {
     /**
-     * @Route("/", name="commande_index", methods={"GET"})
+     * @Route("/panier", name="commande_index", methods={"GET"})
      */
-    public function index(CommandeRepository $commandeRepository): Response
+    public function index(CartService $cartService)
     {
-        return $this->render('commande/index.html.twig', [
-            'commandes' => $commandeRepository->findAll(),
+         return $this->render('commande/index.html.twig', [
+            'items' => $cartService->getFullCart();
+            'total' => $cartService->getTotal();
         ]);
     }
 
-    /**
-     * @Route("/new", name="commande_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
+   /**
+    * @Route("/panier/add/{id}", name="commande_add")
+    */
+    public function add($id, CartService $cartService)
     {
-        $commande = new Commande();
-        $form = $this->createForm(CommandeType::class, $commande);
-        $form->handleRequest($request);
+         $cartService->add($id);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($commande);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('commande_index');
-        }
-
-        return $this->render('commande/new.html.twig', [
-            'commande' => $commande,
-            'form' => $form->createView(),
-        ]);
+         return $this->redirectToRoute('commande_index');
     }
 
-    /**
-     * @Route("/{id}", name="commande_show", methods={"GET"})
-     */
-    public function show(Commande $commande): Response
-    {
-        return $this->render('commande/show.html.twig', [
-            'commande' => $commande,
-        ]);
-    }
+   /**
+    * @Route("/panier/remove/{id}", name="commande_remove")
+    */
+    public function remove($id, CartService $cartService){
 
-    /**
-     * @Route("/{id}/edit", name="commande_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Commande $commande): Response
-    {
-        $form = $this->createForm(CommandeType::class, $commande);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('commande_index');
-        }
-
-        return $this->render('commande/edit.html.twig', [
-            'commande' => $commande,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="commande_delete", methods={"DELETE"})
-     */
-    public function delete(Request $request, Commande $commande): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$commande->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($commande);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('commande_index');
+         $cartService->remove($id);   
+      
+         return $this->redirectToRoute('commande_index');
     }
 }
+
+
+   
