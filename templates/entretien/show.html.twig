@@ -54,9 +54,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('entretien_index') }}">Revenir à la liste</a>
+    <a href="{{ path('entretien_index') }}"><p class="textf">Revenir à la liste<p></a>
 
-    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}">Modifier</a>
+    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}"><p class="textf">Modifier<p></a>
 
     {{ include('entretien/_delete_form.html.twig') }}
     </div>   
