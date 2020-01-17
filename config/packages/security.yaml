@@ -18,12 +18,15 @@ security:
                 property: email
 
     firewalls:
+        
         main:
+            anonymous:    true
             pattern: ^/
             provider: in_database
             form_login:
                 login_path: security_login
                 check_path: security_login
+                
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 # if you are using Symfony < 2.8, use the following config instead:
@@ -31,7 +34,7 @@ security:
             logout:
                 path: security_logout
                 target: homepage
-            anonymous:    true
+            
             
 
                 
