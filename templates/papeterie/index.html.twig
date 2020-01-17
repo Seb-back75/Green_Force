@@ -47,8 +47,10 @@
                 <td>
                     <a href="{{ path('papeterie_show', {'id': papeterie.id}) }}">Voir</a>
                     <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">Modifier</a>
-                     <a href="{{path('cart_remove', {'id': papeterie.id })}}" class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash"></i>
+                     <a href="{{path('cart_add', {'id': papeterie.id })}}" class="btn btn-success float-right">
+                        <i class="fa fa-shopping-cart"></i>
+                        Ajouter
+                    </a>
                 </td>
             </tr>
         {% else %}

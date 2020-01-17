@@ -18,33 +18,32 @@ class CommandeController extends AbstractController
 {
     /**
      * @Route("/panier", name="cart_index")
-     *  @Route("/", name="commande_index", methods={"GET"})
+     * * @Route("/", name="commande_index", methods={"GET"})
      */
     public function panierCommande(SessionInterface $session,CommandeRepository $commandeRepository){
-        
-     
-          
-                $panier = $session->get('panier',[]);
-                $panierData = [];
-            foreach($panier as $id => $quantity){
-                $panierData[] = [
-                        'produit' => $commandeRepository->find($id),
-                        'quantity' => $quantity
 
-                ];
-                
-         }
-         
-         $total = 0;
+        $panier = $session->get('panier',[]);
+        $panierData = [];
+        foreach($panier as $id => $quantity){
+            $product = $commandeRepository->find($id);
 
-            foreach($panierData as $item){
-                $totalItem = $item['produit']->getTttc() * $item['quantity'];
-                $total += $totalItem;
+            if (!$product) {
+                continue;
             }
 
-        
+            $panierData[] = [
+                'product' => $product,
+                'quantity' => $quantity
+            ];
+        }
+         $total = 0;
+
+        foreach($panierData as $item){
+            $totalItem = $item['product']->getTttc() * $item['quantity'];
+            $total += $totalItem;
+        }
+
         return $this->render('commande/index.html.twig', [
-            
             'items'=> $panierData,
             'total'=> $total
         ]);
@@ -148,3 +147,4 @@ public function remove($id, SessionInterface $session) {
     //     return $this->redirectToRoute('commande_index');
     // }
 }
+

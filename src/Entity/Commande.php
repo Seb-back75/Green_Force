@@ -44,7 +44,7 @@ class Commande
     private $ttva;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", nullable = true)
      */
     private $tttc;
 
