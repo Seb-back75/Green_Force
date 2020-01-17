@@ -56,10 +56,12 @@
     <a href="{{ path('produit_index') }}">revenir à la liste</a>
 
     <a href="{{ path('produit_edit', {'id': produit.id}) }}">modifier</a>
+
     <a href="{{path('cart_add', {'id': produit.id })}}" class="btn btn-success float-right">
                         <i class="fa fa-shopping-cart"></i>
                         Ajouter
                     </a>
+
 
     {{ include('produit/_delete_form.html.twig') }}
     </div>   

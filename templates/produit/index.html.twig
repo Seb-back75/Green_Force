@@ -45,10 +45,13 @@
                 <td>
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
                     <a href="{{ path('produit_edit', {'id': produit.id}) }}">Modifier</a>
+
                      <a href="{{path('cart_add', {'id': produit.id })}}" class="btn btn-success float-right">
                         <i class="fa fa-shopping-cart"></i>
                         Ajouter
                     </a>
+=======
+
                 </td>
             </tr>
         {% else %}
