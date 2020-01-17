@@ -3,45 +3,43 @@
 {% block title %}Commande index{% endblock %}
 
 {% block body %}
-    <h1>Votre Panier</h1>
- {% if items | length > 0 %}
+    <h1>Commande index</h1>
+
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Numcom</th>
                 <th>Produit</th>
-                <th>Quantité</th>
-                <th>Total</th>
+                <th>Date</th>
+                <th>Tht</th>
+                <th>Ttva</th>
+                <th>Tttc</th>
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
-         {% for item in items %}
+        {% for commande in commandes %}
             <tr>
-                <td>{{ item.product.id }}</td>
-                <td>{{ item.product.produit}}</td>
-                <td>{{ item.quantity }}</td>           
-                <td>{{ item.product.tttc }}</td>
+                <td>{{ commande.id }}</td>
+                <td>{{ commande.numcom }}</td>
+                <td>{{ commande.produit }}</td>
+                <td>{{ commande.date ? commande.date|date('Y-m-d') : '' }}</td>
+                <td>{{ commande.tht }}</td>
+                <td>{{ commande.ttva }}</td>
+                <td>{{ commande.tttc }}</td>
                 <td>
-                    <a href="{{ path('commande_show', {'id': item.product.id}) }}"class="btn btn-success btn-sm">>show</a>
-                    <a href="{{ path('commande_edit', {'id': item.product.id}) }}"class="btn btn-info btn-sm">>edit</a>
-                    <a href="{{path('cart_remove', {'id': item.product.id })}}" class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash"></i>
-                        Delete
-                    </a>
+                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
+                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
                 </td>
             </tr>
-        {% endfor %} 
-        </tbody>
-             <tr>
-                <td colspan="3" class="text-right">Total :</td>
-                <td >{{ total }}€</td>
-                <td ></td>
-
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
             </tr>
-
+        {% endfor %}
+        </tbody>
     </table>
-    {% else %}
-    <p>Votre panier est vide !</p>
-{%  endif %}
-    <a href="{{ path('commande_index') }}">Create new</a>
+
+    <a href="{{ path('commande_new') }}">Create new</a>
 {% endblock %}

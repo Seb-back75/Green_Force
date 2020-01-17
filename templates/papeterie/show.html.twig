@@ -55,13 +55,6 @@
 
     <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">modifier</a>
 
-     <a href="{{path('cart_add', {'id': papeterie.id })}}" class="btn btn-success float-right">
-                        <i class="fa fa-shopping-cart"></i>
-                        Ajouter
-                    </a>
-
-
-
     {{ include('papeterie/_delete_form.html.twig') }}
      </div>
     </div>
