@@ -1,14 +1,14 @@
 
 .fat1
 {
-   height: 25vh;
+   height: auto;
     font-family: Apple Chancery, cursive;
     }
 .fat2
 {
     
     
-    height: 25vh;
+    height: auto;
     font-family: Apple Chancery, cursive;
     text-align: center;    
 }
@@ -16,7 +16,7 @@
 {
     
     
-    height: 25vh;
+    height: auto;
     font-family: Apple Chancery, cursive;
     text-align: center;    
 }
@@ -83,7 +83,32 @@ a.bouton_inst:hover {
     height:100px;
     
 }
-.test{
-    height: 16vh;
-    border: 1px solid black;
+footer
+{
+    height: 25vh;
+    background-color: #f8f9fa;
 }
+
+
+
+@media(max-width: 1150px)
+    {
+
+    .fat3{
+        display: none;
+    }
+
+    .papt{
+  width: 100%;
+    }
+}
+@media(max-width: 1000px)
+{
+    .fat2{
+        display: none;
+    }
+
+    .papt{
+  width: 100%;
+    }
+} 	
