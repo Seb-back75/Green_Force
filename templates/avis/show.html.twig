@@ -8,10 +8,11 @@
        <div class="col-md-12 avv row justify-content-center"><div class="col-md-3 title"></div>
     </div>
 </div>
+<br>
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
-    <h1>Avis</h1>
+    <div class="col-md-8 gen cadri">
+    <h1><p class="textf">Voir avis<p></h1>
 
     <table class="table">
         <tbody>
@@ -34,12 +35,14 @@
         </tbody>
     </table>
 
-    <a href="{{ path('avis_index') }}">Revenir à la liste</a>
-
-    <a href="{{ path('avis_edit', {'id': avi.id}) }}">Modifier</a>
+    <a href="{{ path('avis_index') }}"><p class="textf">Revenir à la liste<p></a>
+<br>
+    <a href="{{ path('avis_edit', {'id': avi.id}) }}"><p class="textf">Modifier<p></a>
 
     {{ include('avis/_delete_form.html.twig') }}
+    <br>
     </div>
     </div>
 </div>
+<br>
 {% endblock %}

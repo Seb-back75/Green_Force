@@ -5,7 +5,7 @@
     /* Mise en forme */
     width: 100%; /* <-- Largeur de votre site */
     }
-.nav-pers{margin-left: 80px}
+/*.nav-pers{margin-left: 80px}*/
 
 a.bouton_banniere {
     background-image: url(../img/icon-user-a.png);
@@ -111,8 +111,7 @@ font-family: Apple Chancery, cursive;
 }
 .taille
 {
-    font-size: 1.3em;
-    justify-content: end;
+     justify-content: end;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
@@ -120,4 +119,10 @@ font-family: Apple Chancery, cursive;
     margin-left: 100px;
     
 }
+
+#btn5,#btn4,#btn3,#btn2,#btn1
+{
+font-size: 1.1em;
+}
+
 

@@ -3,24 +3,26 @@
 {% block title %}Modifier l'article{% endblock %}
 
 {% block body %}
+
  <div class="container-fluid">
    <div class="row justify-content-md-center">
        <div class="col-md-12 entr row justify-content-center"><div class="col-md-3 title">
  </div>
     </div>
 </div>
-
+<br>
 <section>
 <div class="container-fluid">
-    <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
-    <h1></h1>
+        <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-4 gen cadru">
+    <h1><p class="textf">Modifier produits<p></h1>
 
     {{ include('produit/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('produit_index') }}">Revenir à la liste</a>
+    <a href="{{ path('produit_index') }}"><p class="textf">Revenir à la liste<p></a>
 
     {{ include('produit/_delete_form.html.twig') }}
+    <br>
     </div>   
     </div>   
     </div>

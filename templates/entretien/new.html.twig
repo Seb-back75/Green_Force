@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Créer un article{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 <div class="container-fluid">
@@ -10,11 +10,11 @@
        </div>
     </div>
 </div>
-
+<br>
 <section>
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
+    <div class="col-md-4 gen cadru">
     <h1><p class="textf">Créer un article<p></h1>
 
     {{ include('entretien/_form.html.twig') }}
@@ -22,5 +22,5 @@
     <a href="{{ path('entretien_index') }}"><p class="textf">revenir à la liste<p></a>
     </div>   
     </div>   
-    </div> 
+    <br>
 {% endblock %}
