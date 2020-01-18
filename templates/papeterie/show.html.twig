@@ -8,9 +8,10 @@
        <div class="col-md-12 papt row justify-content-center"><div class="col-md-3 title"></div>
     </div>
 </div>
+<br>
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
+    <div class="col-md-4 gen cadru">
     <br>
     <h1><p class="textf">Papeterie<P></h1>
 
@@ -51,12 +52,14 @@
         </tbody>
     </table>
 
-    <a href="{{ path('papeterie_index') }}">revenir à la liste</a>
+    <a href="{{ path('papeterie_index') }}"><p class="textf">revenir à la liste<p></a><br>
 
-    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}">modifier</a>
+    <a href="{{ path('papeterie_edit', {'id': papeterie.id}) }}"><p class="textf">modifier<p></a>
 
     {{ include('papeterie/_delete_form.html.twig') }}
+    <br>
      </div>
     </div>
 </div>
+<br>
 {% endblock %}
