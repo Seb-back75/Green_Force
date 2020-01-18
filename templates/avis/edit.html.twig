@@ -8,17 +8,19 @@
        <div class="col-md-12 avv row justify-content-center"><div class="col-md-3 title"></div>
     </div>
 </div>
+<br>
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
-    <h1>Modifier les Avis</h1>
+    <div class="col-md-8 gen cadri">
+    <h1><p class="textf">Modifier les Avis<p></h1>
 
     {{ include('avis/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('avis_index') }}">revenir à la liste</a>
+    <a href="{{ path('avis_index') }}"><p class="textf">revenir à la liste<p></a>
 
     {{ include('avis/_delete_form.html.twig') }}
     </div>
     </div>
 </div>
+<br>
 {% endblock %}

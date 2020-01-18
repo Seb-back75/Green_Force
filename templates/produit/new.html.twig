@@ -9,17 +9,18 @@
  </div>
     </div>
 </div>
-
+<br>
 <section>
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
+    <div class="col-md-4 gen cadru">
     <h1><p class="textf">Nouveau Article<p></h1>
 
     {{ include('produit/_form.html.twig') }}
 
-    <a href="{{ path('produit_index') }}">Revenir à la liste</a>
+    <a href="{{ path('produit_index') }}"><p class="textf">Revenir à la liste<p></a>
     </div>   
     </div>   
     </div> 
+    <br>
 {% endblock %}
