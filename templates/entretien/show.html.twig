@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipements{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 equip row justify-content-center"><div class="col-md-3 title">
+
+       </div>
+    </div>
+</div>
+
+<section>
+<div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
+    <h1>Equipements</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entretien.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ entretien.Libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entretien.Description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{asset('images/post/')}}{{ entretien.Image }}" style="width:75px;max-height:75px;"></td>
+            </tr>
+            <tr>
+                <th>Pa</th>
+                <td>{{ entretien.Pa }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ entretien.Pv }}</td>
+            </tr>
+            <tr>
+                <th>TVA</th>
+                <td>{{ entretien.TVA }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ entretien.Stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('entretien_index') }}"><p class="textf">Revenir à la liste<p></a>
+
+    <a href="{{ path('entretien_edit', {'id': entretien.id}) }}"><p class="textf">Modifier<p></a>
+
+    {{ include('entretien/_delete_form.html.twig') }}
+    </div>   
+    </div>   
+    </div> 
+{% endblock %}

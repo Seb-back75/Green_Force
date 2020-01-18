@@ -3,43 +3,67 @@
 {% block title %}Commande index{% endblock %}
 
 {% block body %}
-    <h1>Commande index</h1>
-
+    <h1>Votre Panier</h1>
+ {% if items | length > 0 %}
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Numcom</th>
+                <th>Image</th>
+                <th>Réference</th>
                 <th>Produit</th>
-                <th>Date</th>
-                <th>Tht</th>
-                <th>Ttva</th>
-                <th>Tttc</th>
-                <th>actions</th>
+                <th>Quantité</th>
+                 <th></th>
+                 <th>Pv</th>
+                <th>TVA</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
-        {% for commande in commandes %}
+         {% for item in items %}
             <tr>
-                <td>{{ commande.id }}</td>
-                <td>{{ commande.numcom }}</td>
-                <td>{{ commande.produit }}</td>
-                <td>{{ commande.date ? commande.date|date('Y-m-d') : '' }}</td>
-                <td>{{ commande.tht }}</td>
-                <td>{{ commande.ttva }}</td>
-                <td>{{ commande.tttc }}</td>
+                <td><img src="{{asset('images/post/')}}{{ item.product.image }}" style="width:75px;max-height:75px;"></td>
+                <td>{{ item.product.id }}</td>
+                <td>{{ item.product.produit}}</td>
+                <td>{{ item.quantity }}</td> 
+                <td></td> 
+                 {# <td><a href="{{path('cart_add', {'id': item.product.id })}}" class="btn btn-secondary ">
+                        
+                        +
+                    </a></td> #}
+                    <td>{{ item.product.Pv }}</td>      
+                <td>{{ item.product.ttva }}</td>
+                <td>{{ item.product.tttc }}</td>
                 <td>
-                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
-                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
+                    <a href="{{ path('commande_show', {'id': item.product.id}) }}"class="btn btn-success btn-sm">>show</a>
+                    <a href="{{ path('commande_edit', {'id': item.product.id}) }}"class="btn btn-info btn-sm">>edit</a>
+                    <a href="{{path('cart_remove', {'id': item.product.id })}}" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i>
+                        Delete
+                    </a>
+                    <a href="{{path('cart_add', {'id': item.product.id  })}}" class="btn btn-success float-right">
+                        <i class="fa fa-shopping-cart"></i>
+                        Ajouter
+                    </a>
+                  
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
+              
+        {% endfor %} 
         </tbody>
-    </table>
+             <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td colspan="3" class="text-right">Total :</td>
+                <td >{{ total }}€</td>
+                <td ></td>
 
-    <a href="{{ path('commande_new') }}">Create new</a>
+            </tr>
+
+    </table>
+    {% else %}
+    <p>Votre panier est vide !</p>
+{%  endif %}
+    <a href="{{ path('produit_index') }}">Create new</a>
 {% endblock %}

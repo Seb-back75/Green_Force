@@ -16,4 +16,33 @@ class HomepageController extends AbstractController
             'controller_name' => 'HomepageController',
         ]);
     }
+
+    /**
+     * @Route("/conditions", name="conditions")
+     */
+    public function conditions()
+    {
+        return $this->render('homepage/conditions.html.twig');
+    }
+    /**
+     * @Route("/politique", name="politique")
+     */
+    public function politique()
+    {
+        return $this->render('homepage/conditions.html.twig');
+    }
+    /**
+     * @Route("/mention", name="mention")
+     */
+    public function mention()
+    {
+        return $this->render('homepage/mention.html.twig');
+    }
+    /**
+     * @Route("/propos", name="propos")
+     */
+    public function propos()
+    {
+        return $this->render('homepage/propos.html.twig');
+    }
 }

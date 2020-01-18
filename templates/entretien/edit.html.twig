@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Equipements{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 equip row justify-content-center"><div class="col-md-3 title">
+
+       </div>
+    </div>
+</div>
+
+<section>
+<div class="container-fluid">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-8 gen">
+    <h1><p class="textf">Modifier Equipements<p></h1>
+
+    {{ include('entretien/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('entretien_index') }}">revenir à la liste</a>
+
+    {{ include('entretien/_delete_form.html.twig') }}
+    </div>   
+    </div>   
+    </div> 
+{% endblock %}
