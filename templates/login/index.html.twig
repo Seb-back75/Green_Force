@@ -3,35 +3,86 @@
 {% block title %}Login index{% endblock %}
 
 {% block body %}
-    <h1>Login index</h1>
+    <header id="header">
+	<h1 class="text-center">Bienvenue a vous ! </h1>
+	<nav>
+		<div class="home display-none">Produit</div>
+		<div class="hamb">
+			<a href="#"><i class="fas fa-bars"></i></a>
+			<a href="#"><i class="far fa-window-close"></i></a>
+		</div>
+		<ul id="slide">
+			<li><a href="">Panier</a></li>
+			<li><a href="">Achat</a></li>
+		</ul>
+	</nav>
+	on leur met un image de l'entreprise<br>
+	<h2>entreprise ...</h2>
+</header>
+<main>
+	<section id="deux">
+		<h2></h2>
+		
+		<div>
+			<article>
+				<h3>information sur le client</h3>						
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+			</article>
+			<article>
+				<h3>information supplementaire</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+			</article>
+		</div>
+		
+	</section>
+	<section id="trois">
+		<h2>Nous contacter !</h2>
+		<span class="ligne"></span>
+		<form class="form-group">
+			<aside>
+				<label>Nom</label>
+				<input type="text">
+			</aside>
+			<aside>
+				<label>Téléphone</label>
+				<input type="tel">
+			</aside>
+			<aside>
+				<label>Mail</label>
+				<input type="mail">
+			</aside>
+			<aside>
+				<label>Message</label>
+				<textarea></textarea>
+			</aside>
+			<button>Envoyer !</button>
+		</form>
+	</section>
+</main>
+<footer class="container text-center">
+	<article>
+		<h4>2 rue Eugéne Pottier</h4>
+		<p>Trappes, Yvelines</p>
+	</article>
+	<div>
+		<p>Copyright &copy; Green Force</p>
+	</div>
+</footer>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/script.js"></script>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for login in logins %}
-            <tr>
-                <td>{{ login.id }}</td>
-                <td>{{ login.email }}</td>
-                <td>{{ login.password }}</td>
-                <td>
-                    <a href="{{ path('login_show', {'id': login.id}) }}">show</a>
-                    <a href="{{ path('login_edit', {'id': login.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
     <a href="{{ path('login_new') }}">Create new</a>
 {% endblock %}

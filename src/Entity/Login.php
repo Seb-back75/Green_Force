@@ -24,7 +24,7 @@ class Login
     /**
      * @ORM\Column(type="string", length=255)
      */
-    public $password;
+    public $mdp;
 
     public function getId(): ?int
     {
@@ -43,14 +43,14 @@ class Login
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function getMdp(): ?string
     {
-        return $this->password;
+        return $this->mdp;
     }
 
-    public function setPassword(string $password): self
+    public function setMdp(string $mdp): self
     {
-        $this->password = $password;
+        $this->mdp = $mdp;
 
         return $this;
     }

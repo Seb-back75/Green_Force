@@ -36,7 +36,7 @@ class LoginController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($login);
+            $entityManager->persist($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('login_index');

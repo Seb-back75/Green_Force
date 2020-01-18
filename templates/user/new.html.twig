@@ -3,23 +3,23 @@
 {% block title %}New User{% endblock %}
 
 {% block body %}
+
 <div class="container-fluid">
-   <div class="row justify-content-md-center">
-       <div class="col-md-12 papt row justify-content-center"><div class="col-md-3 title"></div>
+    <div class="row justify-content-md-center">
+       <div class="col-md-12 conn row justify-content-center"><div class="col-md-3 title"></div>
     </div>
 </div>
 
-<div class="container-fluid ">
+<div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-8 gen">
-    <h1 class="text-center">Inscription Compte Client</h1>
+    
+    <div class="col-md-4 gen">
+    <h1>Veuillez-vous inscrire !</h1>
 
-    {{ include('user/_form.html.twig') }}
+        {{ include('user/_form.html.twig') }}
 
-  
-
-<a href="{{ path('login_new') }}">Revenir</a> 
-</div>
+        <a href="{{ path('login_new') }}">Revenir</a>
+   </div>
     </div>
 </div>
 {% endblock %}
