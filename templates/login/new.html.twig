@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Login{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 con row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
+<br>
+<div class="container-fluid ">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-3 gen cadre">
+    <h1><p class="textf">Connectez vous<p></h1>
+
+    {{ include('login/_form.html.twig') }}
+   
+    
+    <a href="{{ path('user_new') }}"><p class="textf">Demande d'inscription<p></a>
+   </div>
+    </div>
+</div>
+
+    
+
+    
+{% endblock %}
+

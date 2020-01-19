@@ -5,17 +5,91 @@ section
 .gen
 {
     
-    min-height: 60vh;
+    min-height: 45vh;
     margin-bottom: 10px;
 }
 .textf
-{font-family: Apple Chancery, cursive;}
+{font-family: Apple Chancery, cursive;
+}
 .imgdex
 {
-height: auto;
-width: auto;
+    size: 300px;
+    max-width:500px;
+    
+
 }
 .carcv
 {
     color: #4fa626;
 }
+
+.cadre
+{
+
+box-shadow: 13px 15px 11px -3px rgba(68,87,59,1);
+background-color: #f8f9fa;
+border: 5px inset #4fa626;;
+border-radius: 6px 30px 5px 40px;
+
+text-align: center;
+}
+.cadru
+{
+
+box-shadow: 13px 15px 11px -3px rgba(68,87,59,1);
+background-color: #f8f9fa;
+border: 5px inset #4fa626;;
+border-radius: 6px 30px 5px 40px;
+
+}
+.cadri
+{
+
+box-shadow: 13px 15px 11px -3px rgba(68,87,59,1);
+background-color: #f8f9fa;
+border: 5px inset #515350;;
+border-radius: 6px 30px 5px 40px;
+
+}
+.cadro
+{
+
+    border-left-width: 5px;
+    border-left-style: outset;
+    border-left-color: rgba(28,110,164,0.39);
+    border-radius: 27px 27px 27px 27px;
+    border-right-width: 5px;
+border-right-style: outset;
+border-right-color: rgba(28,110,164,0.39);
+border-radius: 27px 27px 27px 27px;
+
+}
+.ind{
+    text-align: center;
+}
+
+    .add{
+		background:url(../img/add.gif) no-repeat 10px 8px;
+		text-indent:30px;
+        display:block;
+        border-width: 2px;
+    border-radius: 20px 20px 20px 20px;
+        
+    }
+    .add:hover{
+        background-color: #4fa62677;
+        box-shadow: 13px 15px 11px -11px rgba(68, 87, 59, 0.938);font-family: Apple Chancery, cursive;
+    }
+    .ass{
+		background:url(../img/delete.gif) no-repeat 10px 8px;
+		text-indent:30px;
+        display:block;
+        border-width: 2px;
+    border-radius: 20px 20px 20px 20px;
+        
+    }
+    .ass:hover{
+        background-color: #a6402677;
+        box-shadow: 13px 15px 11px -11px rgba(68, 87, 59, 0.938);font-family: Apple Chancery, cursive;
+    }
+

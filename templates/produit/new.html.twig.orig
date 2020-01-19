@@ -19,6 +19,8 @@
     {{ include('produit/_form.html.twig') }}
 
     <a href="{{ path('produit_index') }}"><p class="textf">Revenir à la liste<p></a>
+
+   
     </div>   
     </div>   
     </div> 
