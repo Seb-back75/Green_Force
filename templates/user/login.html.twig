@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New User{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block body %}
 
@@ -13,13 +13,13 @@
 <div class="container-fluid">
     <div class="row col-md-12 justify-content-center gen">
     
-    <div class="col-md-4 gen">
-    <h1>Veuillez-vous inscrire !</h1>
+        <div class="col-md-4 gen">
+            <h1>Veuillez-vous Connecter !</h1>
 
-        {{ include('user/_form.html.twig') }}
+            {{ include('user/_formulaire.html.twig') }}
 
-        <a href="{{ path('login_new') }}">Revenir</a>
-   </div>
+            <a href="{{ path('user_new') }}">Demande d'inscription</a>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -3,61 +3,85 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
-
-   <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Entreprise</th>
-                <th>Responsable</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>Mdp</th>
-                <th>Confirmer Mdp</th>
-                <th>AdresseL</th>
-                <th>VilleL</th>
-                <th>CpL</th>
-                <th>AdresseF</th>
-                <th>VilleF</th>
-                <th>CpF</th>
-                <th>NTVA</th>
-                <th>NSIRET</th>
-                <th>NKBIS</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.entreprise }}</td>
-                <td>{{ user.responsable }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.telephone }}</td>
-                <td>{{ user.mdp }}</td>
-                <td>{{ user.confirm_mdp }}</td>
-                <td>{{ user.adresseL }}</td>
-                <td>{{ user.villeL }}</td>
-                <td>{{ user.CpL }}</td>
-                <td>{{ user.adresseF }}</td>
-                <td>{{ user.villeF }}</td>
-                <td>{{ user.CpF }}</td>
-                <td>{{ user.NTVA }}</td>
-                <td>{{ user.NSIRET }}</td>
-                <td>{{ user.NKBIS }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="16">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('user_new') }}">Create new</a>
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+       <div class="col-md-12 conn row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
+<header id="header">
+	<h1 class="text-center">Bienvenue a vous ! </h1>
+	<nav>
+		<div class="home display-none">Produit</div>
+		<div class="hamb">
+			<a href="#"><i class="fas fa-bars"></i></a>
+			<a href="#"><i class="far fa-window-close"></i></a>
+		</div>
+		<ul id="slide">
+			<li><a href="">Panier</a></li>
+			<li><a href="">Achat</a></li>
+		</ul>
+	</nav>
+	on leur met un image de l'entreprise<br>
+	<h2>entreprise ...</h2>
+</header>
+<main>
+	<section id="deux">					
+		<div>
+			<article>
+				<h3>information sur le client</h3>						
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+			</article>
+			<article>
+				<h3>information supplementaire</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+			</article>
+		</div>
+	</section>
+	<section id="trois">
+		<h2>Nous contacter !</h2>
+		<span class="ligne"></span>
+		<form class="form-group">
+			<aside>
+				<label>Nom</label>
+				<input type="text">
+			</aside>
+			<aside>
+				<label>Téléphone</label>
+				<input type="tel">
+			</aside>
+			<aside>
+				<label>Mail</label>
+				<input type="mail">
+			</aside>
+			<aside>
+				<label>Message</label>
+				<textarea></textarea>
+			</aside>
+			<button>Envoyer !</button>
+		</form>
+	</section>
+</main>
+<footer class="container text-center">
+	<article>
+		<h4>2 rue Eugéne Pottier</h4>
+		<p>Trappes, Yvelines</p>
+	</article>
+	<div>
+		<p>Copyright &copy; Green Force</p>
+	</div>
+</footer>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/script.js"></script>
 {% endblock %}
