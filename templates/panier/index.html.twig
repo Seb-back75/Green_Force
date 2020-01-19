@@ -3,6 +3,15 @@
 {% block title %}Panier index{% endblock %}
 
 {% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 pan row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
+<br>
+<div class="container-fluid ">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-10 gen cadre">
 <h1>Votre Panier</h1>
  {% if items | length > 0 %}
 
@@ -79,5 +88,8 @@
 
         {% endif %}
     {%  endif %}
- 
+ </div>
+    </div>
+</div>
+<br>
 {% endblock %}
