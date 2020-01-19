@@ -64,5 +64,20 @@
     <p>Votre panier est vide !</p>
     {%  endif %}
 
-    <a href="{{ path('panier_index') }}">Create new</a>
+    {% if items | length > 0 %}
+        {% if connected==true %}
+        <a href="{{path('paiement_new')}}" class="btn btn-success float-right">
+                            <i class="fa fa-shopping-cart"></i>
+                            Valider votre commande
+                        </a>
+        {% else %}
+
+        <a href="{{path('login_new')}}" class="btn btn-success float-right">
+                            <i class="fa fa-shopping-cart"></i>
+                            Valider votre commande
+                        </a>
+
+        {% endif %}
+    {%  endif %}
+ 
 {% endblock %}
