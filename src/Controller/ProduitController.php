@@ -22,6 +22,7 @@ class ProduitController extends AbstractController
     {
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('Equipement'),
+            'categorie' =>('Equipements'),
         ]);
     }
 
@@ -32,6 +33,7 @@ class ProduitController extends AbstractController
     {
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('entretien'),
+            'categorie' =>('Produits d\'entretien'),
         ]);
     }
 
@@ -42,6 +44,7 @@ class ProduitController extends AbstractController
     {
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('papeterie'),
+            'categorie' =>('Papeterie'),
         ]);
     }
     
