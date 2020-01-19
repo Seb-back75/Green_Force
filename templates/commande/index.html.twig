@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande index{% endblock %}
+
+{% block body %}
+    <h1>Votre Panier</h1>
+ {% if items | length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Réference</th>
+                <th>Produit</th>
+                <th>Quantité</th>
+                 <th></th>
+                 <th>Pv</th>
+                <th>TVA</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+         {% for item in items %}
+            <tr>
+                <td><img src="{{asset('images/post/')}}{{ item.product.image }}" style="width:75px;max-height:75px;"></td>
+                <td>{{ item.product.id }}</td>
+                <td>{{ item.product.produit}}</td>
+                <td>{{ item.quantity }}</td> 
+                <td></td> 
+                 {# <td><a href="{{path('cart_add', {'id': item.product.id })}}" class="btn btn-secondary ">
+                        
+                        +
+                    </a></td> #}
+                    <td>{{ item.product.Pv }}</td>      
+                <td>{{ item.product.ttva }}</td>
+                <td>{{ item.product.tttc }}</td>
+                <td>
+                    <a href="{{ path('commande_show', {'id': item.product.id}) }}"class="btn btn-success btn-sm">>show</a>
+                    <a href="{{ path('commande_edit', {'id': item.product.id}) }}"class="btn btn-info btn-sm">>edit</a>
+                    <a href="{{path('cart_remove', {'id': item.product.id })}}" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i>
+                        Delete
+                    </a>
+                    <a href="{{path('cart_add', {'id': item.product.id  })}}" class="btn btn-success float-right">
+                        <i class="fa fa-shopping-cart"></i>
+                        Ajouter
+                    </a>
+                  
+                </td>
+            </tr>
+              
+        {% endfor %} 
+        </tbody>
+             <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td colspan="3" class="text-right">Total :</td>
+                <td >{{ total }}€</td>
+                <td ></td>
+
+            </tr>
+            <tr>
+                <a href="{{path('cart_add', {'id': item.product.id  })}}" class="btn btn-success float-right">
+                    <i class="fa fa-shopping-cart"></i>
+                    Ajouter
+                </a> 
+            </tr>
+    </table>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{path('checkout')}}" methode="POST">
+                <script 
+                src="http://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_Qdz8ZUyGKAczitTnXLaNk7TT00gSR6OK3C"
+                data-amount="999"
+                data-name="Green Force"
+                data-decription="Widget"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-currency="cad">
+            </script>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <p>Votre panier est vide !</p>
+{%  endif %}
+    <a href="{{ path('produit_index') }}">Create new</a>
+{% endblock %}
