@@ -27,7 +27,8 @@ class PanierController extends AbstractController
     {  
         return $this->render('panier/index.html.twig', [
             'items' => $cartService->getFullCart(),
-            'total' => $cartService->getTotal()
+            'total' => $cartService->getTotal(),
+            'connected'=>true,
 
         ]);
     }

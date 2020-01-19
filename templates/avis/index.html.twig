@@ -16,24 +16,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th></th>
                 <th>Commentaires</th>
-                <th>User</th>
+                <th>Utilisateur</th>
                 <th>Date</th>
-                <th>actions</th>
+                
             </tr>
         </thead>
         <tbody>
         {% for avi in avis %}
             <tr>
-                <td>{{ avi.id }}</td>
+                <td></td>
                 <td>{{ avi.Commentaire }}</td>
                 <td>{{ avi.User }}</td>
                 <td>{{ avi.Date ? avi.Date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('avis_show', {'id': avi.id}) }}">Voir</a>
-                    <a href="{{ path('avis_edit', {'id': avi.id}) }}">Modifier</a>
-                </td>
+                
             </tr>
         {% else %}
             <tr>
