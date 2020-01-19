@@ -16,14 +16,35 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProduitController extends AbstractController
 {
     /**
-     * @Route("/", name="produit_index", methods={"GET"})
+     * @Route("/equipement", name="equipement_index", methods={"GET"})
      */
-    public function index(ProduitRepository $produitRepository): Response
+    public function indexE(ProduitRepository $produitRepository): Response
     {
         return $this->render('produit/index.html.twig', [
-            'produits' => $produitRepository->findAll(),
+            'produits' => $produitRepository->findByCategorieField('Equipement'),
         ]);
     }
+
+    /**
+     * @Route("/entretien", name="entretien_index", methods={"GET"})
+     */
+    public function indexEn(ProduitRepository $produitRepository): Response
+    {
+        return $this->render('produit/index.html.twig', [
+            'produits' => $produitRepository->findByCategorieField('entretien'),
+        ]);
+    }
+
+    /**
+     * @Route("/papeterie", name="papeterie_index", methods={"GET"})
+     */
+    public function indexP(ProduitRepository $produitRepository): Response
+    {
+        return $this->render('produit/index.html.twig', [
+            'produits' => $produitRepository->findByCategorieField('papeterie'),
+        ]);
+    }
+    
 
     /**
      * @Route("/new", name="produit_new", methods={"GET","POST"})
@@ -41,7 +62,7 @@ class ProduitController extends AbstractController
 
             $this->addFlash('notice', 'Un nouveau produit a été ajouté !!'); 
 
-            return $this->redirectToRoute('produit_index');
+            return $this->redirectToRoute('entretien_index');
         }
 
         return $this->render('produit/new.html.twig', [
@@ -92,6 +113,6 @@ class ProduitController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('produit_index');
+        return $this->redirectToRoute('/index');
     }
 }

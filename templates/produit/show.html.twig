@@ -50,10 +50,13 @@
                 <th>Stock</th>
                 <td>{{ produit.stock }}</td>
             </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ produit.categorie }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('produit_index') }}"><p class="textf">revenir à la liste<p></a>
 
     <a href="{{ path('produit_edit', {'id': produit.id}) }}"><p class="textf">modifier<p></a>
 

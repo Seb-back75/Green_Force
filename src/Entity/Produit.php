@@ -23,6 +23,11 @@ class Produit
     /**
      * @ORM\Column(type="string", length=50)
      */
+    private $categorie;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private $libelle;
 
     /**
@@ -68,6 +73,19 @@ class Produit
     {
         return $this->id;
     }
+
+    public function getCategorie(): ?string
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(string $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
 
     public function getLibelle(): ?string
     {
