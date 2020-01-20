@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container-fluid">
    <div class="row justify-content-md-center">
-       <div class="col-md-12 entr row justify-content-center"><div class="col-md-3 title">
+       <div class="col-md-12 {{ categorie_css }} row justify-content-center"><div class="col-md-3 title">
  </div>
     </div>
 </div>
@@ -19,34 +19,44 @@
     <table class="table">
         <thead>
             <tr>
+                {% if is_granted('ROLE_ADMIN') %}
                 <th>Id</th>
+                {% endif %}
                 <th>Libelle</th>
                 <th>Description</th>
                 <th>Image</th>
                 {% if is_granted('ROLE_ADMIN') %}
                      <th>Pa</th>
                 {% endif %}
-                <th>Pv</th>
+                <th>Prix</th>
                 <th>Tva</th>
+                {% if is_granted('ROLE_ADMIN') %}
                 <th>Stock</th>
+                {% endif %}
+                 {% if is_granted('ROLE_ADMIN') %}
                 <th>Categorie</th>
-                <th>actions</th>
+                {% endif %}
+                
             </tr>
         </thead>
         <tbody>
         {% for produit in produits %}
             <tr>
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ produit.id }}</td>
+                {% endif %}
                 <td>{{ produit.libelle }}</td>
                 <td>{{ produit.description }}</td>
                 <td><img src="{{asset('images/post/')}}{{ produit.image }}" style="width:75px;max-height:75px;"></td>
                 {% if is_granted('ROLE_ADMIN') %}
                     <td>{{ produit.pa }}</td>
                 {% endif %}
-                <td>{{ produit.pv }}</td>
-                <td>{{ produit.tva }}</td>
+                <td>{{ produit.pv }}€</td>
+                <td>{{ produit.tva }}%</td>
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ produit.stock }}</td>
                 <td>{{ produit.categorie }}</td>
+                {% endif %}
                 <td>
                {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
