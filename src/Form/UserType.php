@@ -6,7 +6,6 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserType extends AbstractType
 {
@@ -17,8 +16,6 @@ class UserType extends AbstractType
             ->add('responsable')
             ->add('email')
             ->add('telephone')
-            ->add('mdp', PasswordType::class)
-            ->add('confirm_mdp', PasswordType::class)
             ->add('adresseL')
             ->add('villeL')
             ->add('CpL')
@@ -30,6 +27,12 @@ class UserType extends AbstractType
             ->add('NKBIS')
         ;
     }
+
+    public function getParent()
+    {
+        return 'FOSUserBundle';
+    }
+
 
     public function configureOptions(OptionsResolver $resolver)
     {

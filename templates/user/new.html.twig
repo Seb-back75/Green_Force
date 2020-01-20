@@ -1,25 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}New User{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
-   <div class="row justify-content-md-center">
-       <div class="col-md-12 papt row justify-content-center"><div class="col-md-3 title"></div>
-    </div>
-</div>
-<br>
-<div class="container-fluid ">
-    <div class="row col-md-12 justify-content-center gen">
-    <div class="col-md-4 gen cadre">
-    <h1 class="text-center"><p class="textf">Inscription Compte Client</p></h1>
+    <h1>Create new User</h1>
 
     {{ include('user/_form.html.twig') }}
 
-  
-
-<a href="{{ path('login_new') }}"><p class="textf">Revenir</p></a> 
-</div>
-    </div>
-</div>
+    <a href="{{ path('user_index') }}">back to list</a>
 {% endblock %}

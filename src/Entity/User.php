@@ -1,28 +1,28 @@
 <?php
+// src/Entity/User.php
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Security\Core\User\UserInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use FOS\UserBundle\Model\User as BaserUser;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(
- *  fields={"email"},
- *  message="L'email que vous avez indiqué est déjà utilisé !")
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
-class User
-
+class User extends BaseUser
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -32,31 +32,13 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $responsable;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min="8",minMessage="Votre mot de passe doit faire minimum 8 caractères")
-     */
-    private $email;
+    protected $responsable;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min="10",minMessage="Votre numero de téléphone doit faire minimum 10 caractères")
      */
     private $telephone;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min="8",minMessage="Votre mot de passe doit faire minimum 8 caractères")
-     */
-    private $mdp;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\EqualTo(propertyPath="confirm_mdp", message="Votre mot de passe doit etre le même que celui que vous confirmez")
-     */
-    public $confirm_mdp;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -103,14 +85,6 @@ class User
      */
     private $NKBIS;
 
-    public function eraseCredentials() {}
-
-    public function getSalt() {}
-
-    public function getRoles() {
-        return ['ROLE_USER'];
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -140,18 +114,6 @@ class User
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
     public function getTelephone(): ?string
     {
         return $this->telephone;
@@ -160,30 +122,6 @@ class User
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    public function getMdp(): ?string
-    {
-        return $this->mdp;
-    }
-
-    public function setMdp(string $mdp): self
-    {
-        $this->mdp = $mdp;
-
-        return $this;
-    }
-
-    public function getConfirmMdp(): ?string
-    {
-        return $this->confirm_mdp;
-    }
-
-    public function setConfirmMdp(string $confirm_mdp): self
-    {
-        $this->confirm_mdp = $confirm_mdp;
 
         return $this;
     }
@@ -212,12 +150,12 @@ class User
         return $this;
     }
 
-    public function getCpL(): ?string
+    public function getCpL(): ?int
     {
         return $this->CpL;
     }
 
-    public function setCpL(string $CpL): self
+    public function setCpL(int $CpL): self
     {
         $this->CpL = $CpL;
 
@@ -248,36 +186,36 @@ class User
         return $this;
     }
 
-    public function getCpF(): ?string
+    public function getCpF(): ?int
     {
         return $this->CpF;
     }
 
-    public function setCpF(string $CpF): self
+    public function setCpF(int $CpF): self
     {
         $this->CpF = $CpF;
 
         return $this;
     }
 
-    public function getNTVA(): ?string
+    public function getNTVA(): ?int
     {
         return $this->NTVA;
     }
 
-    public function setNTVA(string $NTVA): self
+    public function setNTVA(int $NTVA): self
     {
         $this->NTVA = $NTVA;
 
         return $this;
     }
 
-    public function getNSIRET(): ?string
+    public function getNSIRET(): ?int
     {
         return $this->NSIRET;
     }
 
-    public function setNSIRET(string $NSIRET): self
+    public function setNSIRET(int $NSIRET): self
     {
         $this->NSIRET = $NSIRET;
 
@@ -295,9 +233,7 @@ class User
 
         return $this;
     }
+}
+
 
     
-   
-
-   
-}

@@ -25,19 +25,47 @@ class PaiementController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/mail", name="mail_index", methods={"GET","POST"})
+     */
+    public function mail(Request $request, \Swift_Mailer $mailer): Response
+    {
+
+        // send mail
+        $message = (new \Swift_Message('Green Force : Confirmation de Commande'))
+        ->setFrom("greenforce@gmail.com")
+        ->setTo('elle.raja@gmail.com') // A CHANGER PAR l'email du USER connecté
+        ->setBody(
+            "Merci pour votre commmande !",
+            'text/plain'
+        )
+        ;
+
+        $mailer->send($message);
+        $this->addFlash('notice', 'Commande validée, un email vous a été envoyé !!');
+
+
+        return $this->redirectToRoute('homepage');
+ 
+    }
+
     /**
      * @Route("/new", name="paiement_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, \Swift_Mailer $mailer): Response
     {
         $paiement = new Paiement();
         $form = $this->createForm(PaiementType::class, $paiement);
         $form->handleRequest($request);
 
+        
+
         if ($form->isSubmitted() && $form->isValid()) {
+            echo "========================";
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($paiement);
             $entityManager->flush();
+
 
             return $this->redirectToRoute('homepage');
         }

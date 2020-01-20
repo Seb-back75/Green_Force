@@ -74,18 +74,20 @@
     {%  endif %}
 
     {% if items | length > 0 %}
-        {% if connected==true %}
+         {% if  not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+          <a href="{{path('fos_user_security_login')}}" class="btn btn-success float-right">
+                            <i class="fa fa-shopping-cart"></i>
+                            Valider votre commande
+            </a>
+        
+        {% else %}
         <a href="{{path('paiement_new')}}" class="btn btn-success float-right">
                             <i class="fa fa-shopping-cart"></i>
                             Valider votre commande
-                        </a>
-        {% else %}
 
-        <a href="{{path('login_new')}}" class="btn btn-success float-right">
-                            <i class="fa fa-shopping-cart"></i>
-                            Valider votre commande
-                        </a>
-                        
+        </a>
+
+       
 
         {% endif %}
     {%  endif %}<br>    

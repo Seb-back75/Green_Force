@@ -23,6 +23,7 @@ class ProduitController extends AbstractController
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('Equipement'),
             'categorie' =>('Equipements'),
+            'categorie_css'=> ('equip'),
         ]);
     }
 
@@ -30,11 +31,11 @@ class ProduitController extends AbstractController
      * @Route("/entretien", name="entretien_index", methods={"GET"})
      */
     public function indexEn(ProduitRepository $produitRepository): Response
-    {
-        
+    {        
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('entretien'),
             'categorie' =>('Produits d\'entretien'),
+            'categorie_css'=> ('entr'),
         ]);
     }
 
@@ -42,12 +43,11 @@ class ProduitController extends AbstractController
      * @Route("/papeterie", name="papeterie_index", methods={"GET"})
      */
     public function indexP(ProduitRepository $produitRepository): Response
-    {
-
-    
+    {    
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('papeterie'),
             'categorie' =>('Papeterie'),
+            'categorie_css'=> ('papt'),
         ]);
     }
     
