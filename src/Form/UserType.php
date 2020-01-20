@@ -16,8 +16,6 @@ class UserType extends AbstractType
             ->add('responsable')
             ->add('email')
             ->add('telephone')
-            ->add('mdp')
-            ->add('confirm_mdp')
             ->add('adresseL')
             ->add('villeL')
             ->add('CpL')

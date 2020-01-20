@@ -23,7 +23,9 @@
                 <th>Libelle</th>
                 <th>Description</th>
                 <th>Image</th>
-                <th>Pa</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                     <th>Pa</th>
+                {% endif %}
                 <th>Pv</th>
                 <th>Tva</th>
                 <th>Stock</th>
@@ -38,15 +40,19 @@
                 <td>{{ produit.libelle }}</td>
                 <td>{{ produit.description }}</td>
                 <td><img src="{{asset('images/post/')}}{{ produit.image }}" style="width:75px;max-height:75px;"></td>
-                <td>{{ produit.pa }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <td>{{ produit.pa }}</td>
+                {% endif %}
                 <td>{{ produit.pv }}</td>
                 <td>{{ produit.tva }}</td>
                 <td>{{ produit.stock }}</td>
                 <td>{{ produit.categorie }}</td>
-                
                 <td>
+               {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
                     <a href="{{ path('produit_edit', {'id': produit.id}) }}">Modifier</a>
+                {% endif %}
+                    
                      <a href="{{path('cart_add', {'id': produit.id })}}" class="btn btn-success float-right">
                         <i class="fa fa-shopping-cart"></i>
                         Ajouter
@@ -60,8 +66,9 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('produit_new') }}"><p class="textf">Créer un nouveau article<p></a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('produit_new') }}"><p class="textf">Créer un nouveau article<p></a>
+    {% endif %}
     </div>   
     </div>   
     </div> 

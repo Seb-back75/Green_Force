@@ -4,6 +4,7 @@
 namespace App\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -11,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User extends BaseUser
 {
