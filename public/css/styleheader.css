@@ -106,6 +106,12 @@ a.bouton_banniere1:hover {
     background-image: url(../img/bandeau-panier2.jpg);
     background-size: cover;
 }
+.conn
+{
+    height: 40vh;
+    background-image: url(../img/connexion-inscription.jpg);
+    background-size: cover;
+}
 .title
 {color:white;
 text-shadow:1px 3px 5px #4fa626;
