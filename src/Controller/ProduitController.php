@@ -31,6 +31,7 @@ class ProduitController extends AbstractController
      */
     public function indexEn(ProduitRepository $produitRepository): Response
     {
+        
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('entretien'),
             'categorie' =>('Produits d\'entretien'),
@@ -42,6 +43,8 @@ class ProduitController extends AbstractController
      */
     public function indexP(ProduitRepository $produitRepository): Response
     {
+
+    
         return $this->render('produit/index.html.twig', [
             'produits' => $produitRepository->findByCategorieField('papeterie'),
             'categorie' =>('Papeterie'),
