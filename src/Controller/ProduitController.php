@@ -140,6 +140,7 @@ class ProduitController extends AbstractController
             $entityManager->flush();
         }
 
+<<<<<<< HEAD
             $this->addFlash('supp', 'Votre produit '.$produit->getLibelle().' a bien été supprimé !!'); 
 
         if ($produit->getCategorie() == "Papeterie"){
@@ -155,5 +156,8 @@ class ProduitController extends AbstractController
 
         }
         
+=======
+        return $this->redirectToRoute('/equipement_index');
+>>>>>>> 31d51fb08c47162c4cedcc01de2c7beaa086fc70
     }
 }
