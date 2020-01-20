@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,17 +17,21 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(): Response
     {
+        $users = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->findAll();
+
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
+            'users' => $users,
         ]);
     }
 
     /**
-     * @Route("/login", name="user_login", methods={"GET","POST"})
+     * @Route("/connexion", name="user_new", methods={"GET","POST"})
      */
-    public function login(Request $request): Response
+    public function new(Request $request): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -42,30 +45,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('user_index');
         }
 
-        return $this->render('user/login.html.twig', [
-            'user' => $user,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="user_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('user_login');
-        }
-
-        return $this->render('user/create.html.twig', [
+        return $this->render('user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);

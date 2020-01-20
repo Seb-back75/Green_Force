@@ -1,0 +1,28 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    
+    <div class="row">
+        <div class="form-group">
+            <label for="email">{{ 'Email' }}</label>
+            <input type="text" id="email" name="_username"  placeholder ="Adresse email ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="motdepasse">{{ 'Mot de passe' }}</label>
+            <input type="password" id="mdp" name="_password" placeholder="Mot de passe ..." required="required" autocomplete="current-password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">{{ 'Se souvenir de moi' }}</label>
+        </div>
+        
+        <input type="submit" id="_submit" name="_submit" value="{{ 'Connexion !' }}" class="mx-auto form-control btn btn-success" />
+        
+    </div>
+</form>
+
+
+

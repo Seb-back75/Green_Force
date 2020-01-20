@@ -1,0 +1,73 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<form method="post">
+    <div class="row">
+        <div class="form-group">
+            <label for="entreprise">{{ 'Entreprise' }}</label>
+            <input type="text" id="entreprise" name="entreprise" placeholder ="Nommez votre Entreprise ..." required="required" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="responsable">{{ 'Responsable' }}</label>
+            <input type="text" id="responsable" name="responsable" placeholder="Nommer votre Responsable ..." required="required" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="email">{{ 'Email' }}</label>
+            <input type="text" id="email" name="email" placeholder ="Adresse email ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="telephone">{{ 'Telephone' }}</label>
+            <input type="text" id="telephone" name="telephone" placeholder ="Nommer votre telephone ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="motdepasse">{{ 'Mot de passe' }}</label>
+            <input type="text" id="motdepasse" name="motdepasse" placeholder ="Votre Mot de passe ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Confirm_mdp">{{ 'Confirmer le mot de passe' }}</label>
+            <input type="text" id="Confirm_mdp" name="Confirm_mdp" placeholder ="Confirmer le mot de passe ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="adresseL">{{ 'Adresse de Livraison' }}</label>
+            <input type="text" id="adresseL" name="adresseL" placeholder ="Adresse de Livraison ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="villeL">{{ 'Ville de Livraison' }}</label>
+            <input type="text" id="villeL" name="villeL" placeholder ="ville ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="cpL">{{ 'Code postal' }}</label>
+            <input type="text" id="cpL" name="cpL" placeholder ="Code postal ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="adresseF">{{ 'Adresse de Facturation' }}</label>
+            <input type="text" id="adresseF" name="adresseF" placeholder ="Adresse de Facturation ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="villeF">{{ 'Ville de Facturation' }}</label>
+            <input type="text" id="villeF" name="villeF" placeholder ="Nommer votre ville ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="cpF">{{ 'Code postal' }}</label>
+            <input type="text" id="cpF" name="cpF" placeholder ="Code postal ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="NTVA">{{ 'N°TVA' }}</label>
+            <input type="text" id="NTVA" name="NTVA" placeholder ="N°TVA ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="NSIRET">{{ 'N°SIRET' }}</label>
+            <input type="text" id="NSIRET" name="NSIRET" placeholder ="N°SIRET ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="N°KBIS">{{ 'N°KBIS' }}</label>
+            <input type="text" id="N°KBIS" name="N°KBIS" placeholder ="N°KBIS ..." required="required" autocomplete="email" class="form-control" />
+        </div>
+        <input type="submit" id="_submit" name="_submit" value="{{ 'Inscription !' }}" class="form-control btn btn-success" />
+    </div>
+</form>
+<!--(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}-->
+
+
+
+
