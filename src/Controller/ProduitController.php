@@ -52,7 +52,7 @@ class ProduitController extends AbstractController
     /**
      * @Route("/new", name="produit_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(ProduitRepository $produitRepository, Request $request): Response
     {
         $produit = new Produit();
         $form = $this->createForm(ProduitType::class, $produit);
@@ -63,9 +63,20 @@ class ProduitController extends AbstractController
             $entityManager->persist($produit);
             $entityManager->flush();
 
-            $this->addFlash('notice', 'Un nouveau produit a été ajouté !!'); 
+            $this->addFlash('notice', 'Votre produit '.$produit->getLibelle().' a été ajouté !!'); 
 
-            return $this->redirectToRoute('entretien_index');
+            if ($produit->getCategorie() == "Papeterie"){
+                return $this->redirectToRoute('papeterie_index');
+
+            }
+            if ($produit->getCategorie() == "Entretien"){
+                return $this->redirectToRoute('entretien_index');
+
+            }
+            if ($produit->getCategorie() == "Equipement"){
+                return $this->redirectToRoute('equipement_index');
+
+            }
         }
 
         return $this->render('produit/new.html.twig', [
@@ -96,7 +107,20 @@ class ProduitController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('produit_index');
+            $this->addFlash('notice', 'Votre produit '.$produit->getLibelle().' a bien été modifié !!'); 
+
+            if ($produit->getCategorie() == "Papeterie"){
+                return $this->redirectToRoute('papeterie_index');
+    
+            }
+            if ($produit->getCategorie() == "Entretien"){
+                return $this->redirectToRoute('entretien_index');
+    
+            }
+            if ($produit->getCategorie() == "Equipement"){
+                return $this->redirectToRoute('equipement_index');
+    
+            }
         }
 
         return $this->render('produit/edit.html.twig', [
@@ -116,6 +140,20 @@ class ProduitController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('/index');
+            $this->addFlash('supp', 'Votre produit '.$produit->getLibelle().' a bien été supprimé !!'); 
+
+        if ($produit->getCategorie() == "Papeterie"){
+            return $this->redirectToRoute('papeterie_index');
+
+        }
+        if ($produit->getCategorie() == "Entretien"){
+            return $this->redirectToRoute('entretien_index');
+
+        }
+        if ($produit->getCategorie() == "Equipement"){
+            return $this->redirectToRoute('equipement_index');
+
+        }
+        
     }
 }

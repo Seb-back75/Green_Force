@@ -130,6 +130,12 @@ $('#navigation').removeClass("fixNavigation");
             </div>
         {% endfor %}
 
+         {% for flash in app.session.flashBag.get('supp') %}
+            <div id="supp" class="danger alert alert-danger">
+                {{ flash }}
+            </div>
+        {% endfor %}
+
 
     {% block body %}
 
