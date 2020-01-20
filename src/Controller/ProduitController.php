@@ -116,6 +116,6 @@ class ProduitController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('/index');
+        return $this->redirectToRoute('/equipement_index');
     }
 }
