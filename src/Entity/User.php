@@ -35,7 +35,7 @@ class User extends BaseUser
     protected $responsable;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      * @Assert\Length(min="10",minMessage="Votre numero de téléphone doit faire minimum 10 caractères")
      */
     private $telephone;
@@ -52,6 +52,7 @@ class User extends BaseUser
 
      /**
      * @ORM\Column(type="integer")
+     * @Assert\Length(min="5",minMessage="Votre numero de téléphone doit faire minimum 5 caractères")
      */
     private $CpL;
 
@@ -67,6 +68,7 @@ class User extends BaseUser
 
      /**
      * @ORM\Column(type="integer")
+     * @Assert\Length(min="5",minMessage="Votre numero de téléphone doit faire minimum 5 caractères")
      */
     private $CpF;
 

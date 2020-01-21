@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("/paiement")
  */
@@ -34,7 +35,7 @@ class PaiementController extends AbstractController
         // send mail
         $message = (new \Swift_Message('Green Force : Confirmation de Commande'))
         ->setFrom("greenforce@gmail.com")
-        ->setTo('elle.raja@gmail.com') // A CHANGER PAR l'email du USER connecté
+        ->setTo('eliza.piatycheva@gmail.com') // A CHANGER PAR l'email du USER connecté
         ->setBody(
             "Merci pour votre commmande !",
             'text/plain'

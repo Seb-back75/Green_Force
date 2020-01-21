@@ -103,22 +103,21 @@ $('#navigation').removeClass("fixNavigation");
       </li>
 
 
-      <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand nav-pers" href="">
-    <a class="bouton_banniere" href="{{ path('fos_user_security_login') }}"></a>
+      <li class="nav-item">
+    <a class="nav-link bouton_banniere" href="{{ path('fos_user_security_login') }}"></a></li>
     {% if  not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
        <a href="{{ path('fos_user_security_login') }}">Se connecter</a>
       {% else %}
        <a href="{{ path('fos_user_security_logout') }}">Deconnection</a>
     {% endif %}
    </a>
-     </nav>
-      <nav class="navbar navbar-light bg-light">
+    
+      
   <li class="nav-item">
     <a class="nav-link bouton_banniere1" href="{{ path('panier_index')}}"></a>
 
      </li>
-     </nav>
+     
      </ul>
   </div>
 </nav>
