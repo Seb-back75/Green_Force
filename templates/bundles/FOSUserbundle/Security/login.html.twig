@@ -1,0 +1,27 @@
+
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 conn row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
+<br>
+<div class="container-fluid ">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-3 gen cadre">
+    <h1 class="text-center"><p class="textf">Connexion !</p></h1>
+
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+
+  
+
+<a href="/Green_Force/public/index.php"><p class="textf">Revenir</p></a> 
+<a href="/Green_Force/public/index.php/register"><p class="textf">S'inscrire</p></a> 
+
+</div>
+    </div>
+</div>
+    
+{% endblock fos_user_content %}

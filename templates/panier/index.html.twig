@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier index{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+       <div class="col-md-12 pan row justify-content-center"><div class="col-md-3 title"></div>
+    </div>
+</div>
+<br>
+<div class="container-fluid ">
+    <div class="row col-md-12 justify-content-center gen">
+    <div class="col-md-10 gen cadre">
+<h1>Votre Panier</h1>
+ {% if items | length > 0 %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Article</th>
+                 <th></th>
+                <th>Qte</th>
+                <th></th>
+                <th>Prix</th>
+                <th>HT</th>
+                <th>TVA %</th>
+                <th>TTC</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for panier in items %}
+            <tr>
+                <td><img src="{{asset('images/post/')}}{{ panier.produit.image }}" style="width:75px;max-height:75px;"></td>
+                <td>{{ panier.produit.libelle }}</td>
+                <td><a href="{{path('cart_delete', {'id': panier.produit.id })}}" class="btn btn-danger float-left">
+                        <i class="fa fa-shopping-cart"></i>
+                        -
+                    </a></td>
+                <td>{{ panier.quantity }}</td>
+                 <td><a href="{{path('cart_add', {'id': panier.produit.id })}}" class="btn btn-success float-left">
+                        <i class="fa fa-shopping-cart"></i>
+                        +
+                    </a></td>
+                <td>{{ panier.produit.pv }}</td>
+                <td>{{ panier.quantity * panier.produit.pv }}</td>
+                <td>{{ panier.produit.tva }}</td>
+                <td>{{ panier.quantity * panier.produit.pv * 1.20 }}</td>
+
+                <td>
+                <a href="{{path('cart_remove', {'id': panier.produit.id })}}" class="btn btn-danger float-left">
+                        <i class="fa fa-shopping-cart"></i>
+                        Supprimer
+                    </a>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tr>
+                <td colspan="3" class="text-right">Total :</td>
+                <td >{{ total * 1.20 }}€</td>
+                <td ></td>
+
+            </tr>
+    </table>
+    {% else %}
+    <p>Votre panier est vide !</p>
+    {%  endif %}
+
+    {% if items | length > 0 %}
+         {% if  not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+          <a href="{{path('fos_user_security_login')}}" class="btn btn-success float-right">
+                            <i class="fa fa-shopping-cart"></i>
+                            Valider votre commande
+            </a>
+        
+        {% else %}
+        <a href="{{path('paiement_new')}}" class="btn btn-success float-right">
+                            <i class="fa fa-shopping-cart"></i>
+                            Valider votre commande
+
+        </a>
+
+       
+
+        {% endif %}
+    {%  endif %}<br>    
+    <a href="{{ path('papeterie_index') }}"><h2><p class="textf">Continuer vos achats</h2><p></a>
+
+ </div>
+    </div>
+</div>
+<br>
+{% endblock %}
