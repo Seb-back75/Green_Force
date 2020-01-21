@@ -30,18 +30,24 @@ class PaiementController extends AbstractController
      */
     public function mail(Request $request, \Swift_Mailer $mailer): Response
     {
+        
+        $message = (new \Swift_Message('RE: FW: Check this out!'))
+    ->setFrom('greenforceforyou@gmail.com')
+    ->setTo('greenforceforyou@gmail.com')
+    ->setBody(
+        '<h1>HTML email</h1><p>Email with HTML tags if the client supports it.</p>',
+        'text/html'
+    )
+    ->addPart(
+        'Plain text email',
+        'text/plain'
+    );
 
-        // send mail
-        $message = (new \Swift_Message('Green Force : Confirmation de Commande'))
-        ->setFrom("greenforce@gmail.com")
-        ->setTo('elle.raja@gmail.com') // A CHANGER PAR l'email du USER connecté
-        ->setBody(
-            "Merci pour votre commmande !",
-            'text/plain'
-        )
-        ;
+/**
+ * @var Swift_Mailer $mailer
+ */
+$mailer->send($message);
 
-        $mailer->send($message);
         $this->addFlash('notice', 'Commande validée, un email vous a été envoyé !!');
 
 
